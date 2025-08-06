@@ -240,6 +240,49 @@ source is null.
             */
 
             #endregion
+
+
+            #region Single
+
+            #region FirstOverLoad
+            /*
+             Single<TSource>(IEnumerable<TSource>)	
+             Returns the only element of a sequence, and throws an exception if there is 
+             not exactly one element in the sequence.  
+            The single element of the input sequence.
+
+===>Exceptions
+ArgumentNullException
+source is null.
+InvalidOperationException
+The input sequence contains more than one element.
+The input sequence is empty
+             */
+
+            //var result = cars.Single();
+            //Console.WriteLine(result); //Sequence contains more than one element'
+            //cars = [];
+            //var result = cars.Single();
+            //Console.WriteLine(result);// System.InvalidOperationException: 'Sequence contains no elements'
+
+            #endregion
+
+            #region SecondLoad
+            /*
+             Single<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+             Returns the only element of a sequence that satisfies a specified condition,
+             and throws an exception if more than one such element exists.
+             */
+            //var result = cars.Single(c => c.Make == "Ford");
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains more than one matching element'
+            //var result = cars.Single(c => c.Make == "Test");
+            //Console.WriteLine(result); //System.InvalidOperationException: 'Sequence contains no matching element'
+            //var result = cars.Single(c => c.VIN == "WAUEH98E06A527409");
+            //Console.WriteLine(result); // true
+            #endregion
+
+            #endregion
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
