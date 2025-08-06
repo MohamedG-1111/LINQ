@@ -190,6 +190,56 @@ Returns the last element of a sequence that satisfies a specified condition.
             list may be scanned twice, which is slower than using Last with a condition directly.             
              */
             #endregion
+
+            #region LastOrDefault
+            /*
+[1] => LastOrDefault<TSource>(IEnumerable<TSource>)	
+Returns the last element of a sequence, or a default value if the sequence contains no elements.
+[2] => LastOrDefault<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+Returns the last element of a sequence that satisfies a condition or a default value if no such element is found.
+[3] => LastOrDefault<TSource>(IEnumerable<TSource>, TSource)	
+Returns the last element of a sequence, or a specified default value if the sequence contains no elements.
+[4] => LastOrDefault<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>, TSource)	
+Returns the last element of a sequence that satisfies a condition, or a specified default value if no such element is found.
+             */
+            #region FirstOverLoad
+            // var result=cars.LastOrDefault();
+            // cars = [];
+            //result=cars.LastOrDefault();
+            // Console.WriteLine(result); // Return null Default
+
+            #endregion
+
+            #region SecondOverLoad
+            //var result = cars.LastOrDefault(c => c.Make == "Ford");
+            //Console.WriteLine(result);
+            //var result=cars.LastOrDefault(c=>c.Make == "Unknown");
+            //Console.WriteLine(result);
+            #endregion
+
+            #region threeOverLoad
+            //var result = cars.LastOrDefault(DefaultValue);
+            //Console.WriteLine(result);
+            //cars = [];
+            //var result = cars.LastOrDefault(DefaultValue);
+            //Console.WriteLine(result); //DefaultValue
+            #endregion
+
+            #region FourOveload
+            //var result=cars.LastOrDefault(c=>c.Make=="Ford", DefaultValue);
+            //Console.WriteLine(result);
+
+            //var result = cars.LastOrDefault(c => c.Make == "Test", DefaultValue);
+            //Console.WriteLine(result);//DefaultValue
+            #endregion
+
+            /*
+Exceptions
+ArgumentNullException
+source is null.
+            */
+
+            #endregion
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
