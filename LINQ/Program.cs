@@ -158,6 +158,38 @@ Returns the first element of the sequence that satisfies a condition or a defaul
             #endregion
 
             #endregion
+
+            #region Last
+            /*
+Last<TSource>(IEnumerable<TSource>)	
+Returns the last element of a sequence.
+Last<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+Returns the last element of a sequence that satisfies a specified condition.
+             */
+            #region FirstOverLoad
+            //var result = cars.Last();
+            ////Console.WriteLine(result); 
+            //cars = [];
+            // result = cars.Last();
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains no elements'
+            //cars = null;
+            //var result = cars.Last(); //System.ArgumentNullException: 'Value cannot be null. (Parameter 'source')'
+            //Console.WriteLine(result);
+            #endregion
+
+            #region SecondOverLoad
+            //var result = cars.Last(c => c.Color == "Red");
+            //Console.WriteLine(result);
+            //var result = cars.Last(c => c.Color == "Test");
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains no matching element'
+
+            #endregion
+            /*
+             Using Where with Last can cause a performance issue because Where starts filtering
+            from the beginning of the list, while Last searches from the end. This means the whole 
+            list may be scanned twice, which is slower than using Last with a condition directly.             
+             */
+            #endregion
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
