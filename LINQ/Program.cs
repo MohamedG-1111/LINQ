@@ -6,7 +6,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            var cars= Repository.GetCars();
+            var cars = Repository.GetCars();
             //Repository.PrintCars(cars);
 
             #region Where
@@ -135,7 +135,7 @@ default value if the sequence contains no elements.
              if the sequence contains no elements.
              */
             //cars = [];
-            var DefaultValue = new Car()
+            var DefaultCar = new Car()
             {
                 Id = 0,
                 Make = "Unknown",
@@ -145,7 +145,7 @@ default value if the sequence contains no elements.
                 Color = "Unspecified",
                 MaxSpeed = 0,
             };
-            //var result = cars.FirstOrDefault(DefaultValue);
+            //var result = cars.FirstOrDefault(DefaultCar);
             //Console.WriteLine(result); // Do not Return Any Thing
             #endregion
 
@@ -153,7 +153,7 @@ default value if the sequence contains no elements.
             /*FirstOrDefault<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
 Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.*/
             //cars = [];
-            //var result=cars.FirstOrDefault(c=>c.Make=="Test",DefaultValue);
+            //var result=cars.FirstOrDefault(c=>c.Make=="Test",DefaultCar);
             //Console.WriteLine(result);
             #endregion
 
@@ -218,19 +218,19 @@ Returns the last element of a sequence that satisfies a condition, or a specifie
             #endregion
 
             #region threeOverLoad
-            //var result = cars.LastOrDefault(DefaultValue);
+            //var result = cars.LastOrDefault(DefaultCar);
             //Console.WriteLine(result);
             //cars = [];
-            //var result = cars.LastOrDefault(DefaultValue);
-            //Console.WriteLine(result); //DefaultValue
+            //var result = cars.LastOrDefault(DefaultCar);
+            //Console.WriteLine(result); //DefaultCar
             #endregion
 
             #region FourOveload
-            //var result=cars.LastOrDefault(c=>c.Make=="Ford", DefaultValue);
+            //var result=cars.LastOrDefault(c=>c.Make=="Ford", DefaultCar);
             //Console.WriteLine(result);
 
-            //var result = cars.LastOrDefault(c => c.Make == "Test", DefaultValue);
-            //Console.WriteLine(result);//DefaultValue
+            //var result = cars.LastOrDefault(c => c.Make == "Test", DefaultCar);
+            //Console.WriteLine(result);//DefaultCar
             #endregion
 
             /*
@@ -280,6 +280,76 @@ The input sequence is empty
             //var result = cars.Single(c => c.VIN == "WAUEH98E06A527409");
             //Console.WriteLine(result); // true
             #endregion
+
+            #endregion
+
+            #region SingleOrDefault
+            //Returns a single, specific element of a sequence, or a default value
+            //if that element is not found.
+            #region First
+            /*
+             SingleOrDefault<TSource>(IEnumerable<TSource>)	
+             Returns the only element of a sequence, or a default value if the sequence is 
+             empty; this method throws an exception if there is more than one element in 
+              the sequence. 
+             */
+
+            //var result = cars.SingleOrDefault();
+            //Console.WriteLine(result);//Sequence contains more than one element'
+            //cars = [];
+            //var result = cars.SingleOrDefault();
+            //Console.WriteLine(result); // Empty ==>Default
+            #endregion
+
+            #region Second
+            /*
+             SingleOrDefault<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+             Returns the only element of a sequence that satisfies a specified condition or a 
+             default value if no such element exists; this method throws an exception if more
+             than one element satisfies the condition.
+             */
+            //var result=cars.SingleOrDefault(c =>c.Make=="Ford");
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains more than one matching element'
+            //var result = cars.SingleOrDefault(c => c.VIN == "5J8TB1H27CA866118");
+            //Console.WriteLine(result);
+
+            //var result = cars.SingleOrDefault(c => c.VIN == "5J8TB1H27CA866118Q");
+            //Console.WriteLine(result);// No Element Match Conditions return Default
+            #endregion
+
+            #region Three
+            /*
+             SingleOrDefault<TSource>(IEnumerable<TSource>, TSource)	
+             Returns the only element of a sequence, or a specified default value if the 
+             sequence is empty; this method throws an exception if there is more than one 
+             element in the sequence
+             */
+            //var result=cars.SingleOrDefault(DefaultCar);
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains more than one element'
+
+            //cars = [];
+            //var result=cars.SingleOrDefault(DefaultCar);
+            //Console.WriteLine(result); // return Default
+            #endregion
+
+            #region Four
+            /*
+             SingleOrDefault<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>, TSource)	
+             Returns the only element of a sequence that satisfies a specified condition, or a
+             specified default value if no such element exists; this method throws an exception
+             if more than one element satisfies the condition. 
+             */
+            //var result = cars.SingleOrDefault(c => c.Make == "Ford", DefaultCar);
+            //Console.WriteLine(result);//System.InvalidOperationException: 'Sequence contains more than one matching element'
+
+            //var result = cars.SingleOrDefault(c => c.VIN == "5J8TB1H27CA866118", DefaultCar);
+            //Console.WriteLine(result);
+
+            //var result = cars.SingleOrDefault(c => c.VIN == "5J8TB1H27CA866118Q", DefaultCar);
+            //Console.WriteLine(result);// No Element Match Conditions return DefaultCar
+
+            #endregion
+
 
             #endregion
 
