@@ -432,6 +432,25 @@ Sorts the elements of a sequence in ascending order.
 
             #endregion
 
+            #region Any
+            // Determines whether a sequence contains any elements Or Specific Condition
+            #region FirstOverLoad
+            //var res = cars.Any();
+            //Console.WriteLine(res);
+            //cars = [];
+            // res = cars.Any();
+            //Console.WriteLine(res);
+            #endregion
+
+            #region SecondOverrload
+            //var res = cars.Any(c=>c.Make=="Ford");
+            //Console.WriteLine(res);
+
+            // res = cars.Any(c => c.Make == "FordQ");
+            //Console.WriteLine(res);
+            #endregion
+            #endregion
+
 
 
 
