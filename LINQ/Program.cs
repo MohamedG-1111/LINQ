@@ -545,11 +545,30 @@ An IEqualityComparer<T> to compare keys wit*/
             #endregion
 
             #region Sum
-            //List<int>ls=new List<int>() { 1,3,4,5};
+            //List<int> ls = new List<int>() { 1, 3, 4, 5 };
             //var sum = ls.Sum();
             //Console.WriteLine(sum);
             //var totalSpeed = cars.Where(c => c.Make == "Ford").Sum(c => c.MaxSpeed);
             //Console.WriteLine($"totalSpeed : {totalSpeed}");
+            #endregion
+
+            #region Average
+            //var lst=new List<int>() { 1,2,3,4,6};
+            //var avg = lst.Average();
+            //Console.WriteLine(avg);
+            //lst = [];
+            //avg=lst.Average();//System.InvalidOperationException: 'Sequence contains no elements'
+            //Console.WriteLine(avg);
+
+            //var avgSpped = cars.Average(c => c.MaxSpeed);
+            //Console.WriteLine(avgSpped);
+
+            //var avgFord=cars.Where(c=>c.Make=="Ford").Average(c=>c.MaxSpeed);
+            //Console.WriteLine(avgFord);
+
+            //string[] num = ["1","32213","3242623626262"];
+            //var avg = num.Average(n =>long.Parse(n));
+            //Console.WriteLine(avg);
             #endregion
 
 
