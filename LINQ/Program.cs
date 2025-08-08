@@ -521,6 +521,28 @@ Returns an Int64 that represents the total number of elements in a sequence.*/
             #endregion
             #endregion
 
+            #region CountBy
+            /*Parameters
+source
+IEnumerable<TSource>
+A sequence that contains elements to be counted.
+
+keySelector
+Func<TSource,TKey>
+A function to extract the key for each element.
+
+keyComparer
+IEqualityComparer<TKey>
+An IEqualityComparer<T> to compare keys wit*/
+            //Returns the count of elements in the source sequence grouped by key.
+            //var MakerCars = cars.CountBy(c => c.Make).OrderByDescending(c=>c.Value);
+            //var MakerCars = cars.CountBy(c => $"{c.Make}-{c.Color}").OrderByDescending(c => c.Key);
+            //foreach ( var makerCar in MakerCars)
+            //{
+            //    Console.WriteLine($"Maker : {makerCar.Key}-> Count : {makerCar.Value}");
+            //}
+            #endregion
+
 
 
 
