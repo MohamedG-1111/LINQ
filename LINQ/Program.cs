@@ -353,6 +353,90 @@ The input sequence is empty
 
             #endregion
 
+            #region Ording
+            #region OrderBy
+            #region FirstOverLoad
+            //var res = cars.OrderBy(x => x.MaxSpeed);
+            //Repository.PrintCars(res);
+            //var res =
+            //    from c in cars
+            //    orderby c.MaxSpeed ascending // Default
+            //    select c;
+            //Repository.PrintCars(res);
+            #endregion
+
+            #region SecondOverLoad
+            //var res = cars.OrderBy(c => c, new CarComparer());
+            //Repository.PrintCars(res);
+            #endregion
+
+
+            #endregion
+
+            #region OrderByDescending
+
+            #region FirstOverLoad
+            //var res = cars.OrderByDescending(c => c.MaxSpeed);
+            ////Repository.PrintCars(res);
+            //var res =
+            //    from c in cars
+            //    orderby c.MaxSpeed descending 
+            //    select c;
+            //Repository.PrintCars(res);
+            #endregion
+
+            #region SecondOverLoad
+            //var res = cars.OrderByDescending(c => c.MaxSpeed, new MaxSpeedComparer());
+            //Repository.PrintCars(res);
+            #endregion
+
+            #endregion
+
+            #region ThenBy,ThenByDescending
+            // ThenBy ==> Performs a subsequent ordering of the elements in a sequence in ascending order.
+            //ThenByDescending ==>Performs a subsequent ordering of the elements in a sequence in descending order.
+            //var res=from c in cars
+            //        orderby c.Make ascending,c.Model,c.MaxSpeed descending
+            //         select c;
+            //var res = cars.OrderBy(c => c.Make).ThenBy(c => c.Model).ThenByDescending(c => c.MaxSpeed);
+            //Repository.PrintCars(res);
+            #endregion
+
+            #region SecondOverLoad
+            //var res = cars.OrderBy(c => c.MaxSpeed,new MaxSpeedComparer()).ThenBy(c => c.Model).ThenByDescending(c => c,new CarComparer());
+            //Repository.PrintCars(res);
+            #endregion
+
+
+
+            #region Order
+            //var res = cars.Order();//ArgumentException: At least one object must implement IComparable
+            //Repository.PrintCars(res);
+            //var arr = new int[] {1,-1,3,43,1,4,5};
+            //var res = arr.Order(); // Array Implement IComparable
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            /*
+             Order<T>(IEnumerable<T>, IComparer<T>)	
+Sorts the elements of a sequence in ascending order.
+             
+             */
+
+            //var res = cars.Order(new CarComparer());
+            //Repository.PrintCars(res);
+
+
+            #endregion
+
+            #endregion
+
+
+
+
+
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
