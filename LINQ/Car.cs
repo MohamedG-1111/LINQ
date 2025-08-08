@@ -30,6 +30,17 @@ namespace LINQ
             MaxSpeed = 0;
         }
 
+        public Car(int id, string make, string model, int manufactorYear, string vIN, string color, int maxSpeed)
+        {
+            Id = id;
+            Make = make;
+            Model = model;
+            ManufactorYear = manufactorYear;
+            VIN = vIN;
+            Color = color;
+            MaxSpeed = maxSpeed;
+        }
+
         // Override ToString method
         public override string ToString()
         {

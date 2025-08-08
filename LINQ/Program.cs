@@ -458,6 +458,22 @@ Sorts the elements of a sequence in ascending order.
             #endregion
 
 
+            #region Append,prepend
+            // Append ==>Add new Element in the last IEmunerable collection
+            // Prepend ==>Add new Element in the First IEmunerable collection
+            #region Append
+            //var newCar = new Car(1001, "TestCar", "Model", 1990, "fasf14124", "red", 3000);
+            //var result = cars.Append(newCar);
+            //Repository.PrintCars(result);
+            #endregion
+
+            #region Prepend
+            //var newCar = new Car(1001, "TestCar", "Model", 1990, "fasf14124", "red", 3000);
+            //var result = cars.Prepend(newCar);
+            //Repository.PrintCars(result);
+            #endregion
+            #endregion
+
 
 
 
