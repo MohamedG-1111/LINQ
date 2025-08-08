@@ -522,6 +522,7 @@ Returns an Int64 that represents the total number of elements in a sequence.*/
             #endregion
 
             #region CountBy
+            // return ==>An enumerable containing the frequencies of each key occurrence in source.
             /*Parameters
 source
 IEnumerable<TSource>
@@ -543,7 +544,13 @@ An IEqualityComparer<T> to compare keys wit*/
             //}
             #endregion
 
-
+            #region Sum
+            //List<int>ls=new List<int>() { 1,3,4,5};
+            //var sum = ls.Sum();
+            //Console.WriteLine(sum);
+            //var totalSpeed = cars.Where(c => c.Make == "Ford").Sum(c => c.MaxSpeed);
+            //Console.WriteLine($"totalSpeed : {totalSpeed}");
+            #endregion
 
 
 
