@@ -451,6 +451,12 @@ Sorts the elements of a sequence in ascending order.
             #endregion
             #endregion
 
+            #region All
+            //Determines whether all the elements of a sequence satisfy a condition.
+            //var res = cars.All(c => c.Color == "Black");
+            //Console.WriteLine(res);
+            #endregion
+
 
 
 
