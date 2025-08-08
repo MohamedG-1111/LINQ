@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+using System.Text.RegularExpressions;
 using LINQ;
+using static System.Formats.Asn1.AsnWriter;
 namespace LINQ
 {
     internal class Program
@@ -473,6 +475,52 @@ Sorts the elements of a sequence in ascending order.
             //Repository.PrintCars(result);
             #endregion
             #endregion
+
+            #region Count,LongCount
+            #region Count
+            /*Exceptions
+ArgumentNullException
+source is null.
+
+OverflowException
+The number of elements in source is larger than Int32.MaxValue.*/
+            #region FirstOverload
+            //var nums =cars.Count();
+            //Console.WriteLine($"Total Count : {nums}");
+            //cars = [];
+            //nums = cars.Count();
+            //Console.WriteLine($"Total Count : {nums}");
+            //Console.WriteLine(Int32.MaxValue);//2147483647
+            #endregion
+
+            #region SecondOverLoad
+            /*Count<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+Returns a number that represents how many elements in the specified sequence satisfy a condition
+            */
+            //var count = cars.Count(c => c.Make == "Ford");
+            //Console.WriteLine(count); //96
+            // Use Any() to check if an element exists instead of Where(...).Count().
+            // Any() stops at the first match, while Count() iterates through all elements.
+            #endregion
+
+            #endregion
+
+            #region LongCount
+            /*Returns an Int64 that represents the number of elements in a sequence.
+
+Overloads
+LongCount<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)	
+Returns an Int64 that represents how many elements in a sequence satisfy a condition.
+
+LongCount<TSource>(IEnumerable<TSource>)	
+Returns an Int64 that represents the total number of elements in a sequence.*/
+            //var count = cars.LongCount(c => c.Make == "Ford");
+            //Console.WriteLine(count);
+            //count=cars.LongCount();
+            //Console.WriteLine(count);
+            #endregion
+            #endregion
+
 
 
 
