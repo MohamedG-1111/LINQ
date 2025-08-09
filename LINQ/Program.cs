@@ -821,13 +821,36 @@ TSource is a primitive type and the source sequence is empty.*/
             //    Console.WriteLine($"{Sub[0]} - {Sub[1]}");
             //}
             //var res01 = students.SelectMany(st => st.Subjects);
-            //var res01 = students.SelectMany((st, i) => st.Subjects.Select(sb=>$"{i} : {sb}"));
-            //var res01 = students.Select(st => st.Subjects.Aggregate((acc, nxt) => acc +" , "+ nxt));
-            //var res01 = students.Select(st =>$"{string.Join(',',st.Subjects)}");
+            //var res01 = students.SelectMany((st, i) => st.Subjects.Select(sb => $"{i} : {sb}"));
+            //var res01 = students.Select(st => st.Subjects.Aggregate((acc, nxt) => acc + " , " + nxt));
+            //var res01 = students.Select(st => $"{st.Name}-->{string.Join(',', st.Subjects)}");
             //foreach (var Sub in res01)
             //{
             //    Console.WriteLine(Sub);
             //}
+
+            #endregion
+
+            #region Three-OverLoad
+            /*SelectMany<TSource, TCollection, TResult>(
+    IQueryable<TSource> source,
+    Expression<Func<TSource, int, IEnumerable<TCollection>>> collectionSelector,
+    Expression<Func<TSource, TCollection, TResult>> resultSelector)
+*/
+            //var res = students.SelectMany((st, i) => st.Subjects, (st, Subjectname) =>
+            //new
+            //{
+            //    StudentName = st.Name,
+            //    SubjectName = Subjectname
+            //});
+
+
+            //foreach( var student in res)
+            //{
+            //    Console.WriteLine($"{student.StudentName} - {student.SubjectName}");
+            //}
+            #endregion
+
 
             #endregion
 
