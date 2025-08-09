@@ -773,6 +773,20 @@ TSource is a primitive type and the source sequence is empty.*/
             #endregion
 
 
+            #region Method-Select
+            //var res = cars.Select(car => new CarDto(car.Id, car.Make, car.Model, car.ManufactorYear));
+
+            var res = cars.Select((car,index) => new CarDto(car.Id=index, car.Make, $"{car.Model} - {car.Color}", car.ManufactorYear));
+
+            //var res = cars.Select((car,Index) => new {Id=Index+1,car.Make,Model=$"{car.Model} - {car.Color}",car.ManufactorYear});
+
+            foreach ( var i in res)
+            {
+                Console.WriteLine(i);
+            }
+
+            #endregion
+
 
 
         }
