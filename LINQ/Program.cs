@@ -717,6 +717,35 @@ TSource is a primitive type and the source sequence is empty.*/
             //Console.WriteLine(res);//42 first value for acc is 10
             #endregion
 
+
+            #region ThreeOverLoad
+            /*Aggregate<TSource,TAccumulate,TResult>(IEnumerable<TSource>, 
+             TAccumulate, Func<TAccumulate,TSource,TAccumulate>, Func<TAccumulate,TResult>)	
+             Applies an accumulator function over a sequence. The specified seed value is used as 
+            the initial accumulator value, and the specified function is used to select the result value.
+            */
+            //string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
+
+            //// Determine whether any string in the array is longer than "banana".
+            //string longestName =
+            //    fruits.Aggregate("banana",
+            //                    (longest, next) =>
+            //                        next.Length > longest.Length ? next : longest,
+            //                    // Return the final result as an upper case string.
+            //                    fruit => fruit.ToUpper());
+
+            //Console.WriteLine(
+            //    "The fruit with the longest name is {0}.",
+            //    longestName);
+            // ----------------------------------------
+            //var res01 = cars.Aggregate(new Car(),(acc, nxt) => acc.MaxSpeed > nxt.MaxSpeed ? acc : nxt,c=>c.MaxSpeed);
+            //Console.WriteLine(res01);
+            // ------------------------------------------------------ 
+
+            //var res = arr.Aggregate(-1, (acc, nxt) => acc > nxt ? acc : nxt, result => result * 1000);
+            //Console.WriteLine(res); // Max*1000 = 16000
+
+            #endregion
             #endregion
 
 
