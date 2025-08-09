@@ -776,14 +776,58 @@ TSource is a primitive type and the source sequence is empty.*/
             #region Method-Select
             //var res = cars.Select(car => new CarDto(car.Id, car.Make, car.Model, car.ManufactorYear));
 
-            var res = cars.Select((car,index) => new CarDto(car.Id=index, car.Make, $"{car.Model} - {car.Color}", car.ManufactorYear));
+            //var res = cars.Select((car,index) => new CarDto(car.Id=index, car.Make, $"{car.Model} - {car.Color}", car.ManufactorYear));
 
             //var res = cars.Select((car,Index) => new {Id=Index+1,car.Make,Model=$"{car.Model} - {car.Color}",car.ManufactorYear});
 
-            foreach ( var i in res)
-            {
-                Console.WriteLine(i);
-            }
+            //foreach ( var i in res)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+
+
+            #region selectMany
+            var students = new[]
+{
+    new { Name = "Ahmed",  Subjects = new[] { "Math", "Science" } },
+    new { Name = "Sara",   Subjects = new[] { "History", "Art" } },
+    new { Name = "Omar",   Subjects = new[] { "Physics", "Chemistry" } },
+    new { Name = "Mona",   Subjects = new[] { "Biology", "Math" } },
+    new { Name = "Khaled", Subjects = new[] { "Computer", "English" } },
+    new { Name = "Laila",  Subjects = new[] { "Geography", "History" } }
+};
+            #region First&&Second-OverLoad-SelectMany
+            // Reach for all Subjects 
+
+            // 1] Using Foreach
+            //List<string> Subjects = new List<string>();
+            //foreach( var student in students)
+            //{
+            //    foreach( var i in student.Subjects)
+            //    {
+            //        Subjects.Add(i);
+            //    }
+
+            //}
+            //foreach(var Sub in Subjects)
+            //{
+            //    Console.WriteLine(Sub);
+            //}
+            //var res = students.Select(st => st.Subjects);
+            //foreach (var Sub in res)
+            //{
+            //    Console.WriteLine($"{Sub[0]} - {Sub[1]}");
+            //}
+            //var res01 = students.SelectMany(st => st.Subjects);
+            //var res01 = students.SelectMany((st, i) => st.Subjects.Select(sb=>$"{i} : {sb}"));
+            //var res01 = students.Select(st => st.Subjects.Aggregate((acc, nxt) => acc +" , "+ nxt));
+            //var res01 = students.Select(st =>$"{string.Join(',',st.Subjects)}");
+            //foreach (var Sub in res01)
+            //{
+            //    Console.WriteLine(Sub);
+            //}
 
             #endregion
 
