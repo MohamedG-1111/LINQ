@@ -621,6 +621,29 @@ source is null.*/
 
             #endregion
 
+            #region MinBy
+            /*Exceptions
+ArgumentNullException
+source is null.
+
+ArgumentException
+No key extracted from source implements the IComparable or IComparable<T> interface.
+
+InvalidOperationException
+TSource is a primitive type and the source sequence is empty.*/
+
+            /*Returns
+                TSource
+                The value with the minimum key in the sequence.
+            */
+            //var car=cars.MinBy(c=>c.MaxSpeed);
+            //Console.WriteLine(car);
+
+            //var res = cars.MinBy(c => c.MaxSpeed, new MaxSpeedComparer());
+            //Console.WriteLine(res);
+            #endregion
+
+
 
 
 
