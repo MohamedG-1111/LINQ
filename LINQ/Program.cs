@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Text.RegularExpressions;
 using LINQ;
+using Newtonsoft.Json.Linq;
 using static System.Formats.Asn1.AsnWriter;
 namespace LINQ
 {
@@ -583,6 +584,27 @@ An IEqualityComparer<T> to compare keys wit*/
             /*Exceptions
 ArgumentNullException
 source is null.*/
+            #endregion
+
+            #region MaxBy
+            // Returns
+            // TSource
+            // The value with the maximum key in the sequence.
+            #region FirstOverLoad
+            // Before .net6
+            //var car=cars.OrderByDescending(c=>c.MaxSpeed).FirstOrDefault();
+            // Console.WriteLine(car);
+            // After .net6
+            //var car=cars.MaxBy(c=>c.MaxSpeed);
+            // Console.WriteLine(car);
+            #endregion
+
+            #region SecondOverLoad
+            //var res = cars.MaxBy(c => c.MaxSpeed, new MaxSpeedComparer());
+            //Console.WriteLine(res);
+            #endregion
+
+
             #endregion
 
 
