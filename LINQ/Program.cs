@@ -571,6 +571,20 @@ An IEqualityComparer<T> to compare keys wit*/
             //Console.WriteLine(avg);
             #endregion
 
+            #region Max
+            //Returns the maximum value in a sequence of values.
+            //int[] arr = [11, 3, 4, 0, 6, 7];
+            //var MaxValue = arr.Max();
+            //Console.WriteLine(MaxValue);
+
+            //var res = cars.Max(c => c.MaxSpeed);
+            //Console.WriteLine(res);
+
+            /*Exceptions
+ArgumentNullException
+source is null.*/
+            #endregion
+
 
 
 
