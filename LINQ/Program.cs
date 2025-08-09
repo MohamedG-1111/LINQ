@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using LINQ;
 using Newtonsoft.Json.Linq;
@@ -698,6 +699,22 @@ TSource is a primitive type and the source sequence is empty.*/
             //Console.WriteLine(res.Make.Length);
 
 
+            #endregion
+
+            #region SecondOverLoad
+            //int[] arr = [2, 4, 2, 16, 8];
+            // var res = arr.Aggregate((acc, nxt) =>
+            //{
+            //    Console.WriteLine($"Acc : {acc},next : {nxt}");
+            //    return acc + nxt;
+            //});
+            //Console.WriteLine(res);//32 first value for acc is 2
+            //Console.WriteLine("--------------------------");
+            //res = arr.Aggregate(10, (acc, nxt)=>{
+            //    Console.WriteLine($"Acc : {acc},next : {nxt}");
+            //    return acc + nxt;
+            //});
+            //Console.WriteLine(res);//42 first value for acc is 10
             #endregion
 
             #endregion
