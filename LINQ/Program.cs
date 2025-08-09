@@ -748,7 +748,29 @@ TSource is a primitive type and the source sequence is empty.*/
             #endregion
             #endregion
 
+            #region Query-Select
+            //var res=from c in cars
+            //        where c.Make=="Ford"
+            //        select c;
 
+            // ==> Select With Mapping 
+
+            //var res = from c in cars
+            //          select new CarDto(c.Id, c.Make, c.Model, c.ManufactorYear);
+            // ---------------------------------------------------------
+            //var res = from c in cars
+            //          select new CarDto(c.Id, c.Make,$"{c.Model} - {c.Color}", c.ManufactorYear);
+
+
+            //  ==> Select With ansymouns type
+            //var res = from c in cars
+            //          select new { c.Id, c.Make, Model = $"{c.Model} - {c.Color}", Year = c.ManufactorYear };
+
+            //foreach (var c in res)
+            //{
+            //    Console.WriteLine(c);
+            //}
+            #endregion
 
 
 
