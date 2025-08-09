@@ -607,6 +607,20 @@ source is null.*/
 
             #endregion
 
+            #region Min
+            //Returns the minimum value in a sequence of values.
+            #region First
+            //var car=cars.Min(c=>c.MaxSpeed);
+            //Console.WriteLine(car);
+            #endregion
+
+            #region Second
+            //var car=cars.Min(c=>c.MaxSpeed);
+            //Console.WriteLine(car);
+            #endregion
+
+            #endregion
+
 
 
 
