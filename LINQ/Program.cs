@@ -643,6 +643,66 @@ TSource is a primitive type and the source sequence is empty.*/
             //Console.WriteLine(res);
             #endregion
 
+            #region Aggregate
+            #region firstOverLoad
+            /*
+             Aggregate<TSource>(IEnumerable<TSource>, Func<TSource,TSource,TSource>)	
+             Applies an accumulator function over a sequence.
+             */
+            int[] arr = [2, 4, 2, 16, 8];
+            // Using Sum
+            //var TotalSum = arr.Sum();
+            //Console.WriteLine(TotalSum);
+            // ----------------------------------------
+            //                      Using Aggregate
+            //       Returns
+            //         TSource
+            //         The final accumulator value.
+            //var res = arr.Aggregate((acc, nxt) =>
+            //{
+            //    Console.WriteLine($"Acc : {acc},next : {nxt}");
+            //    return acc + nxt;
+            //});
+            //Console.WriteLine(res);
+
+            //------------------------------
+            // Using Max
+            //var max = arr.Max();
+            //Console.WriteLine(max);
+            // ------------------------------
+            //Using Aggragate
+            //var res=arr.Aggregate((acc,nxt)=> {
+            //Console.WriteLine($"acc : {acc} , nxt : {nxt}");
+            //    return acc > nxt ? acc : nxt;
+            //    });
+            //Console.WriteLine(res);
+
+            //var res=cars.Max(c=>c.MaxSpeed);
+            //Console.WriteLine(res);
+            //var res01=cars.Aggregate((acc,nxt)=>acc.MaxSpeed>nxt.MaxSpeed?acc:nxt); // Return Car
+            //Console.WriteLine(res01.MaxSpeed);
+
+            // Min Length of Maker
+
+            //var res=cars.Min(c=>c.Make.Length);
+            //Console.WriteLine(res);
+            //var res = cars.MinBy(c => c.Make.Length);
+            //Console.WriteLine(res);
+            //cars = cars.Slice(0, 5);
+            //var res = cars.Aggregate((acc, nxt) =>
+            //{
+            //    Console.WriteLine($"acc : {acc.Make} , next : {nxt.Make}");
+            //    return acc.Make.Length < nxt.Make.Length ? acc : nxt;
+            //});
+            //Console.WriteLine("---------------------------");
+            //Console.WriteLine(res.Make.Length);
+
+
+            #endregion
+
+            #endregion
+
+
 
 
 
