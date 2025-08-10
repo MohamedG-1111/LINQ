@@ -882,6 +882,23 @@ TSource is a primitive type and the source sequence is empty.*/
             //}//Name : Mohamed , Age : 15 Only
             #endregion
 
+            #region DistinctBy
+            /*DistinctBy<TSource,TKey>(IEnumerable<TSource>, Func<TSource,TKey>)	
+Returns distinct elements from a sequence according to a specified key selector function.*/
+            //Person[] peoples=
+            //{
+            //    new Person(){Name="Mohamed",Age=12},
+            //    new Person(){Name="Ali",Age=12},
+            //    new Person(){Name="Amr",Age=20},
+            //    new Person(){Name="Mona",Age=70}
+            //};
+            //var res = peoples.DistinctBy(p=>p.Age);
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
 
 
         }
