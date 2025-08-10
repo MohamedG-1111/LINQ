@@ -1022,6 +1022,31 @@ Returns distinct elements from a sequence according to a specified key selector 
             #endregion
 
 
+            #region ToLookup
+            /*
+           ToLookup` creates an in-memory, immutable lookup table from a sequence,
+            executing immediately and grouping elements by a specified key for fast key-based access.
+           */
+
+
+            //var res = cars.ToLookup(c => c.Make);
+
+            //var res = cars.ToLookup(c => c.Make, c => new CarDto(c.Id, c.Make, c.Model, c.ManufactorYear));
+
+
+            //foreach( var car in res)
+            //{
+            //    Console.WriteLine(" ---------------------------");
+            //    Console.WriteLine($"Key : {car.Key}");
+                
+            //    foreach( var cardto in car)
+            //    {
+            //        Console.WriteLine($"{cardto.ID} - {cardto.Maker} - {cardto.Model} - {cardto.Year}");
+            //    }
+            //}
+
+            #endregion
+
 
         }
 
