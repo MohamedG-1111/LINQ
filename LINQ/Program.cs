@@ -918,6 +918,63 @@ Returns distinct elements from a sequence according to a specified key selector 
             //                Console.WriteLine($"{car.Make} - {car.Id}");
             #endregion
 
+            #region GroupBy
+            //var groups = from c in cars
+            //             group c by new { c.Make ,c.Color};
+            //foreach(var items in groups )
+            //{
+            //    Console.WriteLine($"Group : {items.Key} , Count : {items.Count()}");
+
+            //        Repository.PrintCars(items);
+
+            //}
+            // var group = cars.GroupBy(c => new { c.Model ,c.Make});
+            //foreach( var item in group )
+            // {
+            //     Console.WriteLine($"Group : {item.Key} , Count : {item.Count()}");
+            //     //Repository.PrintCars(item);
+            // }
+
+            //var res = from c in cars
+            //          group c by new { c.Make, c.Color }
+            //        into g
+            //          select new
+            //          {
+            //             g.Key,
+            //             CarsOfGroup=g,
+            //             Count=g.Count(),
+            //          };
+            // -------------------------------------------------
+            //var res = cars.GroupBy(c => new { c.Make})
+            //     .Select(g => new
+            //     {
+            //         g.Key,
+            //         CarsOfGroup = g,
+            //         Count = g.Count()
+
+            //     });
+            // ---------------------------------------
+
+            //var res = cars.GroupBy(c => c.Make, (key, g) => new
+            //{
+            //    Key=key,
+            //    CarsOfGroup=g,
+            //    Count=g.Count()
+            //});
+            //var res = cars.GroupBy(c => Math.Abs(c.MaxSpeed / 100), (key, g) => new
+            //{
+            //    Key = key,
+            //    CarsOfGroup = g,
+            //    Count = g.Count()
+            //});
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"Key : {item.Key}, Count : {item.Count}");
+            //    Repository.PrintCars(item.CarsOfGroup);
+
+        // }
+            #endregion
+
 
 
         }
