@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using LINQ;
 using Newtonsoft.Json.Linq;
@@ -972,7 +973,52 @@ Returns distinct elements from a sequence according to a specified key selector 
             //    Console.WriteLine($"Key : {item.Key}, Count : {item.Count}");
             //    Repository.PrintCars(item.CarsOfGroup);
 
-        // }
+            // }
+            #endregion
+
+
+            #region AggragateBy
+            var employees = new List<Employee>
+{
+    new Employee("Ahmed", "IT", 8000),
+    new Employee("Sara", "HR", 7000),
+    new Employee("Omar", "IT", 9000),
+    new Employee("Laila", "Finance", 7500),
+    new Employee("Hassan", "HR", 7200)
+};
+
+
+            // Using GroupBy
+            //var res = employees.GroupBy(e => e.Department, (key, employeesGroup) => new
+            //{
+            //    Department= key,
+            //    TotalSalary= employeesGroup.Sum(e=>e.Salary)
+            //});
+
+            //Using AggragateBy
+
+            // IEnumerable<KeyValuePair<TKey,TAccumulate>>
+
+            //var res = employees.AggregateBy(
+            //    e => e.Department,
+            //    seed: 0.0,
+            //    (Total, currentEmployee) => Total + currentEmployee.Salary
+            //    );
+            //var res = cars.AggregateBy
+            //    (
+            //       c=>c.Make,
+            //       seed:new List<string>(),
+            //       (acc, val) => [..acc,val.Model]
+            //    );
+            //foreach(var car in res)
+            //{
+            //    Console.WriteLine($"Maker : {car.Key} ");
+            //    foreach(var model in car.Value.Distinct())
+            //    {
+            //        Console.WriteLine($"\t\t{model}");
+            //    }
+            //}
+
             #endregion
 
 
