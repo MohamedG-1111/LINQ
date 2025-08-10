@@ -854,6 +854,34 @@ TSource is a primitive type and the source sequence is empty.*/
 
             #endregion
 
+            #region Distinct
+            //  Returns distinct elements from a sequence.
+            // Source should Implement IEqualitable or based on Default Reference
+            //int[]arrr = [1, 3, 4, 21, 1, 3];
+            ////var result = arrr.Distinct();
+            //var result=students.SelectMany(st=>st.Subjects).Distinct();
+            //foreach ( var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Person[] persons =
+            //{
+            //    new Person() { Name="Mohamed",Age=15},
+            //    new Person() { Name = "Mohamed", Age = 15 }
+            //};
+            //var result = persons.Distinct();
+            //foreach ( var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            // Output will Be Two Object , Must use second Overload and Implement IEqualtabl Interface
+            //var result = persons.Distinct(new PersonIEqualtabl());
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}//Name : Mohamed , Age : 15 Only
+            #endregion
+
 
 
         }
