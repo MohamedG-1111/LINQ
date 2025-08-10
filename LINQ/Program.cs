@@ -897,6 +897,25 @@ Returns distinct elements from a sequence according to a specified key selector 
             //{
             //    Console.WriteLine(item);
             //}
+
+
+            /*DistinctBy<TSource,TKey>(IEnumerable<TSource>, Func<TSource,TKey>, IEqualityComparer<TKey>)	
+Returns distinct elements from a sequence according to a specified key selector function and using a specified comparer to compare keys.*/
+
+            //            var carsD = new[]
+            //{
+            //    new Car { Make = "BMW", Id = 1 },
+            //    new Car { Make = "bmw", Id = 2 },
+            //    new Car { Make = "Audi", Id = 3 }
+            //};
+
+            //            var result = carsD.DistinctBy(
+            //                c => c.Make,                  
+            //                StringComparer.OrdinalIgnoreCase 
+            //            );
+
+            //            foreach (var car in result)
+            //                Console.WriteLine($"{car.Make} - {car.Id}");
             #endregion
 
 
