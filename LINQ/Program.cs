@@ -1160,6 +1160,19 @@ An empty IEnumerable<T> whose type argument is TResult.
             //Console.WriteLine(car03);
             #endregion
 
+            #region ElementAtOrDefault
+            /*Returns the element at a specified index in a sequence or 
+             * a default value if the index is out of range*/
+            //var car=cars.ElementAtOrDefault(1000); // Return Default
+            //Console.WriteLine(car);
+            //var car02 = cars.ElementAtOrDefault(10); // ID: 11, Make: Merkur, Model: XR4Ti, Year: 1985, VIN: WAUFFAFL3AN312699, Color: Fuscia, Max Speed: 754 km/h
+            //Console.WriteLine(car02);
+            //var car03 = cars.ElementAtOrDefault(new Index(1000, true));
+            //Console.WriteLine(car03);
+            //var car04 = cars.ElementAtOrDefault(new Index(1001, true));// Return Default
+            //Console.WriteLine(car04);
+            #endregion
+
 
 
         }
