@@ -1122,28 +1122,6 @@ Returns a specified range of contiguous elements from a sequence.*/
             //Repository.PrintCars(res);
             #endregion
 
-            #region SkipWhile
-            /*Bypasses elements in a sequence as long as a specified condition
-             is true and then returns the remaining elements.*/
-            //var res = cars.SkipWhile(c => c.Make == "Kia");
-            //Repository.PrintCars(res);  
-            #endregion
-
-            #region PaginationWith[Skip-Take]
-            int PageSize = 166;
-            int PageNumber = 1;
-            while (true)
-            {
-            
-                var res = cars.Skip((PageNumber - 1) * PageSize).Take(PageSize);
-                if (res.Count() == 0) break;
-                Repository.PrintCars(res);
-                PageNumber++;
-               
-                Thread.Sleep(1000);
-            }
-            #endregion
-
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
