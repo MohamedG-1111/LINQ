@@ -1075,6 +1075,13 @@ Returns a specified range of contiguous elements from a sequence.*/
 
             #endregion
 
+            #region TakeLast
+            /*IQueryable<TSource> TakeLast<TSource>(this System.Linq.IQueryable<TSource> source, int count)
+             * Returns a new queryable sequence that contains the last count elements from source.
+             */
+            //var res = cars.OrderByDescending(c=>c.MaxSpeed).TakeLast(10);
+            //Repository.PrintCars(res);
+            #endregion
 
         }
 
