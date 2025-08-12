@@ -1127,11 +1127,29 @@ Returns a specified range of contiguous elements from a sequence.*/
 IEnumerable<TResult>
 An empty IEnumerable<T> whose type argument is TResult.
              */
-            var emptyList = Enumerable.Empty<string>();
-            Console.WriteLine(emptyList.Any());
-            emptyList= emptyList.Append("1");
-            Console.WriteLine(emptyList.Any());
+            //var emptyList = Enumerable.Empty<string>();
+            //Console.WriteLine(emptyList.Any());
+            //emptyList= emptyList.Append("1");
+            //Console.WriteLine(emptyList.Any());
             #endregion
+
+            #region DefaultifEmpty
+            //var result = cars.DefaultIfEmpty();
+            //Repository.PrintCars(result); // sequence
+            //int[] array = [];
+            //var res = array.DefaultIfEmpty(1000);
+            //foreach(var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //var carsempty = Enumerable.Empty<Car>();
+            //var car= carsempty.DefaultIfEmpty(DefaultCar);
+            //Repository.PrintCars(car);
+
+
+            #endregion
+
+
 
         }
 
