@@ -1117,8 +1117,16 @@ Returns a specified range of contiguous elements from a sequence.*/
             #region SkipLast
             /*Returns a new queryable sequence that contains the elements from source 
             with the last count elements of the source queryable sequence omitted.*/
+
             //var res = cars.SkipLast(10);
             //Repository.PrintCars(res);
+            #endregion
+
+            #region SkipWhile
+            /*Bypasses elements in a sequence as long as a specified condition
+             is true and then returns the remaining elements.*/
+            //var res = cars.SkipWhile(c => c.Make == "Kia");
+            //Repository.PrintCars(res);  
             #endregion
 
         }
