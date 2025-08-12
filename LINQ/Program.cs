@@ -1194,6 +1194,71 @@ An empty IEnumerable<T> whose type argument is TResult.
             //}
             #endregion
 
+            #region Union
+            /*
+            Union<TSource>(IEnumerable<TSource>, IEnumerable<TSource>)	
+            Produces the set union of two sequences by using the default equality comparer.
+            */
+            //Produces the set union of two sequences.
+
+
+            //    var list1 = new List<Employee>
+            //{
+            //    new Employee("Ali", "IT", 8000),
+            //    new Employee("Sara", "HR", 6000),
+            //    new Employee("Omar", "IT", 7500),
+            //    new Employee("Ali", "IT", 8000), 
+            //    new Employee("Mona", "Finance", 7000)
+            //};
+
+            //    var list2 = new List<Employee>
+            //{
+            //    new Employee("Yasser", "IT", 8500),
+            //    new Employee("Sara", "HR", 6000),
+            //    new Employee("Omar", "IT", 7500),
+            //    new Employee("Nora", "Marketing", 7200),
+            //    new Employee("Ali", "IT", 8000)
+            //};
+            //    var res=list1.Union(list2);
+            //    // It Record this Implement IEqualtabl Interface
+            //    foreach(var item in res)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+
+            // -------------------------------------
+        //    var list1 = new List<Person>
+        //{
+        //    new Person { Name = "Ali", Age = 25 },
+        //    new Person { Name = "Sara", Age = 30 },
+        //    new Person { Name = "Omar", Age = 28 },
+        //    new Person { Name = "Ali", Age = 25 }, 
+        //    new Person { Name = "Mona", Age = 22 }
+        //};
+
+        //    var list2 = new List<Person>
+        //{
+        //    new Person { Name = "Hana", Age = 27 },
+        //    new Person { Name = "Sara", Age = 30 }, 
+        //    new Person { Name = "Khaled", Age = 35 },
+        //    new Person { Name = "Ali", Age = 25 }, 
+        //    new Person { Name = "Omar", Age = 28 } 
+        //};
+            //var res=list1.Union(list2);
+            /*Since Person does not implement IEquatable<Person> or override Equals 
+             * and GetHashCode, LINQ methods like Distinct or Except will treat each
+             * object as different even if the property values are identical,
+             * resulting in duplicates.*/
+           //var res=list1.Union(list2,new PersonIEqualtabl());
+           // foreach (var item in res)
+           // {
+           //     Console.WriteLine(item);
+           // }
+
+
+
+            #endregion
+
 
 
         }
