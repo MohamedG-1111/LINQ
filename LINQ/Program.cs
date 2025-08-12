@@ -1114,6 +1114,13 @@ Returns a specified range of contiguous elements from a sequence.*/
             //Repository.PrintCars(res);
             #endregion
 
+            #region SkipLast
+            /*Returns a new queryable sequence that contains the elements from source 
+            with the last count elements of the source queryable sequence omitted.*/
+            //var res = cars.SkipLast(10);
+            //Repository.PrintCars(res);
+            #endregion
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
