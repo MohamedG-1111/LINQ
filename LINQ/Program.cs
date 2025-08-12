@@ -1227,39 +1227,69 @@ An empty IEnumerable<T> whose type argument is TResult.
             //    }
 
             // -------------------------------------
-        //    var list1 = new List<Person>
-        //{
-        //    new Person { Name = "Ali", Age = 25 },
-        //    new Person { Name = "Sara", Age = 30 },
-        //    new Person { Name = "Omar", Age = 28 },
-        //    new Person { Name = "Ali", Age = 25 }, 
-        //    new Person { Name = "Mona", Age = 22 }
-        //};
+            //    var list1 = new List<Person>
+            //{
+            //    new Person { Name = "Ali", Age = 25 },
+            //    new Person { Name = "Sara", Age = 30 },
+            //    new Person { Name = "Omar", Age = 28 },
+            //    new Person { Name = "Ali", Age = 25 }, 
+            //    new Person { Name = "Mona", Age = 22 }
+            //};
 
-        //    var list2 = new List<Person>
-        //{
-        //    new Person { Name = "Hana", Age = 27 },
-        //    new Person { Name = "Sara", Age = 30 }, 
-        //    new Person { Name = "Khaled", Age = 35 },
-        //    new Person { Name = "Ali", Age = 25 }, 
-        //    new Person { Name = "Omar", Age = 28 } 
-        //};
+            //    var list2 = new List<Person>
+            //{
+            //    new Person { Name = "Hana", Age = 27 },
+            //    new Person { Name = "Sara", Age = 30 }, 
+            //    new Person { Name = "Khaled", Age = 35 },
+            //    new Person { Name = "Ali", Age = 25 }, 
+            //    new Person { Name = "Omar", Age = 28 } 
+            //};
             //var res=list1.Union(list2);
             /*Since Person does not implement IEquatable<Person> or override Equals 
              * and GetHashCode, LINQ methods like Distinct or Except will treat each
              * object as different even if the property values are identical,
              * resulting in duplicates.*/
-           //var res=list1.Union(list2,new PersonIEqualtabl());
-           // foreach (var item in res)
-           // {
-           //     Console.WriteLine(item);
-           // }
+            //var res=list1.Union(list2,new PersonIEqualtabl());
+            // foreach (var item in res)
+            // {
+            //     Console.WriteLine(item);
+            // }
 
 
 
             #endregion
 
+            #region UnionBy
+            /*
+             Produces the set union of two sequences according to a specified 
+             key selector function.
+             */
+//            var list1 = new List<Person>
+//{
+//    new Person { Name = "Mohamed", Age = 1500 },
+//    new Person { Name = "Ali", Age = 20 }
+//};
 
+//            var list2 = new List<Person>
+//{
+//    new Person { Name = "mohamed", Age = 25 },
+//    new Person { Name = "Mona", Age = 50 }
+//};
+            //var res = list1.UnionBy(list2, p => p.Name);
+            //foreach (var person in res)
+            //{
+            //    Console.WriteLine(person);
+            //}
+
+            // ---------------------------
+            //var res = list1.UnionBy(list2, p => p.Name,StringComparer.OrdinalIgnoreCase);
+            //foreach (var person in res)
+            //{
+            //    Console.WriteLine(person);
+            //}
+
+
+            #endregion
 
         }
 
