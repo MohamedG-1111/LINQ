@@ -1117,16 +1117,27 @@ Returns a specified range of contiguous elements from a sequence.*/
             #region SkipLast
             /*Returns a new queryable sequence that contains the elements from source 
             with the last count elements of the source queryable sequence omitted.*/
-
             //var res = cars.SkipLast(10);
             //Repository.PrintCars(res);
             #endregion
 
+            #region Empty
+            /*
+             Returns
+IEnumerable<TResult>
+An empty IEnumerable<T> whose type argument is TResult.
+             */
+            var emptyList = Enumerable.Empty<string>();
+            Console.WriteLine(emptyList.Any());
+            emptyList= emptyList.Append("1");
+            Console.WriteLine(emptyList.Any());
+            #endregion
+
         }
 
-        private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
-        {
-            return cars.Where(predicate);
-        }
+        //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
+        //{
+        //    return cars.Where(predicate);
+        //}
     }
 }
