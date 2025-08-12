@@ -1038,13 +1038,22 @@ Returns distinct elements from a sequence according to a specified key selector 
             //{
             //    Console.WriteLine(" ---------------------------");
             //    Console.WriteLine($"Key : {car.Key}");
-                
+
             //    foreach( var cardto in car)
             //    {
             //        Console.WriteLine($"{cardto.ID} - {cardto.Maker} - {cardto.Model} - {cardto.Year}");
             //    }
             //}
 
+            #endregion
+
+            #region Chunk
+            /*Splits the elements of a sequence into chunks of size at most size.*/
+            //var splits = cars.Chunk(100);
+            //foreach(var item in splits)
+            //{
+            //    Repository.PrintCars(item);
+            //}
             #endregion
 
 
