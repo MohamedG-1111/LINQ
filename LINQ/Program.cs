@@ -1056,6 +1056,25 @@ Returns distinct elements from a sequence according to a specified key selector 
             //}
             #endregion
 
+            #region Take
+            /*
+Take<TSource>(IQueryable<TSource>, Int32)
+Source:
+Queryable.cs
+Returns a specified number of contiguous elements from the start of a sequence.
+            */
+            //var TenMaxSpeed = cars.OrderByDescending(c=>c.MaxSpeed).Take(10);
+            //Repository.PrintCars(TenMaxSpeed);
+            /*
+Take<TSource>(IQueryable<TSource>, Range)
+Source:
+Queryable.cs
+Returns a specified range of contiguous elements from a sequence.*/
+            //var res=cars.OrderByDescending(c=>c.MaxSpeed).Take(new Range(0,10));
+            //Repository.PrintCars(res);  
+
+            #endregion
+
 
         }
 
