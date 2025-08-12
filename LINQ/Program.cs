@@ -1105,6 +1105,15 @@ Returns a specified range of contiguous elements from a sequence.*/
 
             #endregion
 
+            #region Skip
+            /*Bypasses a specified number of elements in a sequence and then returns
+        the remaining elements.
+        IQueryable<TSource> Skip<TSource>(this System.Linq.IQueryable<TSource> source, int count);
+             */
+            //var res = cars.Skip(10);
+            //Repository.PrintCars(res);
+            #endregion
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
