@@ -1173,6 +1173,15 @@ An empty IEnumerable<T> whose type argument is TResult.
             //Console.WriteLine(car04);
             #endregion
 
+            #region Index
+            /*Returns an enumerable that incorporates the element's index into a tuple*/
+            //var res = cars.Index();
+            //foreach(var car in res)
+            //{
+            //    Console.WriteLine($"Index : {car.Index} , Car : {car.Item}");
+            //}
+            #endregion
+
 
 
         }
