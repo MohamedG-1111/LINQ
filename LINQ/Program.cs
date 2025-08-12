@@ -1083,6 +1083,28 @@ Returns a specified range of contiguous elements from a sequence.*/
             //Repository.PrintCars(res);
             #endregion
 
+            #region TakeWhile
+            /*Returns elements from a sequence as long as a specified condition is true,
+             and then skips the remaining elements*/
+            #region FirstOverLoad
+            /*
+        TakeWhile<TSource>(IQueryable<TSource>, Expression<Func<TSource,Boolean>>)	
+        Returns elements from a sequence as long as a specified condition is true.
+             */
+            //var res = cars.TakeWhile(c => c.MaxSpeed>200);// First False end
+            // Repository.PrintCars(res);
+            /*
+         TakeWhile<TSource>(IQueryable<TSource>, Expression<Func<TSource,Int32,Boolean>>)	
+         Returns elements from a sequence as long as a specified condition is true. 
+         The element's index is used in the logic of the predicate function.
+             */
+            //var res = cars.TakeWhile((c,i)=>i<100);
+            //Repository.PrintCars(res);
+            #endregion
+
+
+            #endregion
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
