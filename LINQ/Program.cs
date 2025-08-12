@@ -1182,6 +1182,18 @@ An empty IEnumerable<T> whose type argument is TResult.
             //}
             #endregion
 
+            #region Concate
+            /*Concatenates two sequences without Distinct*/
+            //int[] arr01 = [1, 2, 3];
+            //int[] arr02 = [4,5,6];
+            //int[] arr03 = [6,7,9];
+            //var res=arr01.Concat(arr02).Concat(arr03);
+            //foreach(var ele in res)
+            //{
+            //    Console.WriteLine($"{ele}");
+            //}
+            #endregion
+
 
 
         }
