@@ -1149,6 +1149,17 @@ An empty IEnumerable<T> whose type argument is TResult.
 
             #endregion
 
+            #region ElementAt
+            /*ElementAt<TSource>(IEnumerable<TSource>, Index)	
+              Returns the element at a specified index in a sequence.*/
+            //var car01=cars.ElementAt(4);
+            //Console.WriteLine(car01);
+            //var car02 =cars.ElementAt(new Index(4));
+            //Console.WriteLine(car02);
+            //var car03 = cars.ElementAt(new Index(996, true)); //Index start from 1[end] ex : [end(1) - front(1000)]
+            //Console.WriteLine(car03);
+            #endregion
+
 
 
         }
