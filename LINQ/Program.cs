@@ -1129,6 +1129,21 @@ Returns a specified range of contiguous elements from a sequence.*/
             //Repository.PrintCars(res);  
             #endregion
 
+            #region Pagination
+            //int PageSize = 100;
+            //int PageNumber = 1;
+            
+            //int Totalelemnt = 0;
+            //while(Totalelemnt != cars.Count())
+            //{
+            //    var res = cars.Skip((PageNumber - 1) * PageSize).Take(PageSize);
+            //    Repository.PrintCars(res);
+            //    PageNumber++;
+            //    Totalelemnt= (PageNumber - 1) *PageSize;
+            //    Thread.Sleep(1000);
+            //}
+            #endregion
+
         }
 
         private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
