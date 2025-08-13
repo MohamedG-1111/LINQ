@@ -1299,7 +1299,7 @@ An empty IEnumerable<T> whose type argument is TResult.
             /*Zip<TFirst,TSecond>(IEnumerable<TFirst>, IEnumerable<TSecond>)	
           Produces a sequence of tuples with elements from the two specified sequences.*/
             int[] arr01 = [1, 2, 3, 4];
-            string[] arr02 = ["One", "Two", "Thress","Four"];
+            string[] arr02 = ["One", "Two", "Thress", "Four"];
             //var res=arr01.Zip(arr02);
             //foreach( var item in res)
             //{
@@ -1353,6 +1353,15 @@ An empty IEnumerable<T> whose type argument is TResult.
             //}
             #endregion
 
+            #region Hashset
+            /*HashSet<TSource>
+A HashSet<T> that contains values of type TSource selected from the input sequence.*/
+            var res = cars.ToHashSet();
+            foreach(var item in res)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
