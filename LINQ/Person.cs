@@ -45,5 +45,5 @@ namespace LINQ
             return hash;
         }
     }
-    public record Employee(string Name, string Department, int Salary);
+    //public record Employee(string Name, string Department, int Salary);
     }

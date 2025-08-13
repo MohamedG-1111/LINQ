@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using LINQ;
+using LINQ.JoinTraning;
 using Newtonsoft.Json.Linq;
+using ReJoin = LINQ.JoinTraning.Repository;
 using static System.Formats.Asn1.AsnWriter;
+using System.Net;
+using System.Transactions;
+
 namespace LINQ
 {
     internal class Program
@@ -980,14 +986,14 @@ Returns distinct elements from a sequence according to a specified key selector 
 
 
             #region AggragateBy
-            var employees = new List<Employee>
-{
-    new Employee("Ahmed", "IT", 8000),
-    new Employee("Sara", "HR", 7000),
-    new Employee("Omar", "IT", 9000),
-    new Employee("Laila", "Finance", 7500),
-    new Employee("Hassan", "HR", 7200)
-};
+            //            var employees = new List<Worker>
+            //{
+            //    new Employee("Ahmed", "IT", 8000),
+            //    new Employee("Sara", "HR", 7000),
+            //    new Employee("Omar", "IT", 9000),
+            //    new Employee("Laila", "Finance", 7500),
+            //    new Employee("Hassan", "HR", 7200)
+            //};
 
 
             // Using GroupBy
@@ -1375,6 +1381,219 @@ A List<T> that contains elements from the input sequence.*/
 
 
             // Tolist,ToDictionary,ToArray == > Immediate Excution
+            #endregion
+
+            #region Join
+            var Worker = ReJoin.LoadEmployees();
+            var Departments = ReJoin.LoadDepartments();
+            var Projects = ReJoin.LoadProjects();
+            var EmpProject = ReJoin.LoadEmployeeProjects();
+
+            #region Q1
+            /*
+              Display the names of employees along with the names of their departments.
+              (Employee Name + Department Name)
+           */
+            //var q1 = from dept in Departments
+            //         join emp in Worker
+            //         on dept.Id equals emp.DepartmentId
+            //         select new
+            //         {
+            //             DepartmentName = dept.Name,
+            //             EmployeeName = emp.Name,
+            //         };
+
+            //var q1 = Departments.
+            //    Join(Worker,
+            //    d => d.Id,
+            //    e => e.DepartmentId,
+            //    (dept, emp) =>new
+            //    {
+            //        DepartmentName=dept.Name,
+            //        EmployeeName= emp.Name
+            //    });
+            #endregion
+
+
+            #region q2
+            /*
+          Display the names of employees along with the names of the projects
+            they are working on.
+          (Employee Name + Project Name)*/
+            //var q2 = from emp in Worker
+            //         join empproject in EmpProject
+            //         on emp.Id equals empproject.EmployeeId
+            //         join project in Projects
+            //         on empproject.ProjectId equals project.Id
+            //         select new
+            //         {
+            //             EmployeeName = emp.Name,
+            //             ProjectName = project.Name,
+            //         };
+            //var q2 = Worker.Join(EmpProject
+            //    , emp => emp.Id,
+            //    empp => empp.EmployeeId,
+            //    (emp, emppro) => new
+            //    {
+            //        emp,
+            //        emppro
+            //    }).Join(Projects,
+            //    wp => wp.emppro.ProjectId,
+            //    project => project.Id,
+            //    (wp, project) => new
+            //    {
+            //        EmployeeName = wp.emp.Name,
+            //        ProjectName=project.Name,
+            //    }
+            //   );
+
+            #endregion
+
+            #region q3
+            /*
+             *Display the names of departments and the number of employees 
+              in each department.
+             (Department Name + Count of Employees)
+            */
+            // Group By
+            // var q3 = from dept in Departments
+            //         join emp in Worker
+            //         on dept.Id equals emp.DepartmentId
+            //         group dept by dept.Name into EmpDept
+            //         select new
+            //         {
+            //             EmployeeName = EmpDept.Key,
+            //             CountOfEmp = EmpDept.Count(),
+            //         };
+            ////Group Join(join...into)
+            //var result1 = from dept in Departments
+            //              join emp in Worker
+            //              on dept.Id equals emp.DepartmentId into EmpDept
+            //              select new
+            //              {
+            //                  DepartmentName = dept.Name,
+            //                  CountOfEmployees = EmpDept.Count()
+            //              };
+            //var q3 = Worker.Join(Departments,
+            //    worker => worker.DepartmentId,
+            //    dept => dept.Id,
+            //    (worker, dept) => new
+            //    {
+            //        worker,
+            //        dept
+            //    }).GroupBy(res => res.dept.Name, (key, g) => new
+            //    {
+            //        DepartmentName = key,
+            //        CountOfEmployee = g.Count()
+            //    });
+
+
+            #endregion
+
+            #region q4
+            /*Display employees, their departments,
+             * and the projects they are working on all in one table.
+             (Employee Name + Department Name + Project Name)*/
+            //var q4 = from dept in Departments
+            //         join emp in Worker
+            //         on dept.Id equals emp.DepartmentId
+            //         join EmpPro in EmpProject
+            //         on emp.Id equals EmpPro.EmployeeId
+            //         join pro in Projects
+            //         on EmpPro.ProjectId equals pro.Id
+            //         select new
+            //         {
+            //             EmployeeName = emp.Name,
+            //             DepartmentName = dept.Name,
+            //             ProjectName = pro.Name,
+            //         };
+            //var q4 = Worker.Join(Departments,
+            //    emp => emp.DepartmentId,
+            //    dept => dept.Id,
+            //    (emp, dept) => new
+            //    {
+            //        empId = emp.Id,
+            //        empName = emp.Name,
+            //        deptName = dept.Name,
+            //    }).Join(EmpProject,
+            //    ed => ed.empId,
+            //    emppro => emppro.EmployeeId,
+            //    (ed, emppro) => new
+            //    {
+            //        ed.empName,
+            //        ed.deptName,
+            //        emppro.ProjectId
+            //    }).Join(Projects,
+            //     edp => edp.ProjectId,
+            //     p => p.Id,
+            //     (edp, p) => new
+            //     {
+            //         EmployeeName = edp.empName,
+            //         DepartmentName = edp.deptName,
+            //         ProjectName = p.Name,
+            //     });
+
+
+            #endregion
+
+            #region q5
+            /*
+             * Display the names of projects and the number of employees
+             * assigned to each project.
+              (Project Name + Count of Employees)
+            */
+            //var q5 = from emp in Worker
+            //         join empro in EmpProject
+            //         on emp.Id equals empro.EmployeeId
+            //         join pro in Projects
+            //         on empro.ProjectId equals pro.Id
+            //         group pro by pro.Name into empProjects
+            //         select new
+            //         {
+            //             ProjectName= empProjects.Key,
+            //             CountOfEmployees=empProjects.Count(),
+            //         };
+            //var q5 =from p in Projects
+            //         join ep in EmpProject
+            //         on p.Id equals ep.ProjectId into empProjs
+            //         select new
+            //         {
+            //             ProjectName = p.Name,
+            //             EmployeeCount = empProjs.Count()
+            //         };
+            //var q5 = Worker.Join(EmpProject,
+            //    w => w.Id,
+            //    empro => empro.EmployeeId,
+            //    (w, empro) => new
+            //    {
+            //        w,
+            //        empro
+            //    }).Join(Projects,
+            //    empro => empro.empro.ProjectId,
+            //    p => p.Id,
+            //    (empro, p) => new
+            //    {
+            //        ProjectName = p.Name,
+            //        empro
+            //    }).GroupBy(source => source.ProjectName,
+            //    (key, g) => new
+            //    {
+            //        key,
+            //        CountOfEmployee=g.Count()
+            //    });
+
+            #endregion
+
+
+
+
+
+            foreach (var item in q5)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            
             #endregion
         }
 
