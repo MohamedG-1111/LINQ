@@ -10,11 +10,11 @@ namespace LINQ
     public static class Repository
     {
 
-        public static List<Car> GetCars()
+        public static IEnumerable<Car> GetCars()
         {
             string json = File.ReadAllText("D:\\Route Tasks\\linq\\LINQ\\CAR_MOCK_DATA.json");
 
-            List<Car> cars = JsonConvert.DeserializeObject<List<Car>>(json);
+            IEnumerable<Car> cars = JsonConvert.DeserializeObject<List<Car>>(json);
 
             return cars;
 

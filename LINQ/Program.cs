@@ -490,7 +490,7 @@ source is null.
 OverflowException
 The number of elements in source is larger than Int32.MaxValue.*/
             #region FirstOverload
-            //var nums =cars.Count();
+            //var nums = cars.Count();
             //Console.WriteLine($"Total Count : {nums}");
             //cars = [];
             //nums = cars.Count();
@@ -781,9 +781,9 @@ TSource is a primitive type and the source sequence is empty.*/
 
             //var res = cars.Select((car,index) => new CarDto(car.Id=index, car.Make, $"{car.Model} - {car.Color}", car.ManufactorYear));
 
-            //var res = cars.Select((car,Index) => new {Id=Index+1,car.Make,Model=$"{car.Model} - {car.Color}",car.ManufactorYear});
+            //var res = cars.Select((car, Index) => new { Id = Index + 1, car.Make, Model = $"{car.Model} - {car.Color}", car.ManufactorYear });
 
-            //foreach ( var i in res)
+            //foreach (var i in res)
             //{
             //    Console.WriteLine(i);
             //}
@@ -1327,11 +1327,20 @@ An empty IEnumerable<T> whose type argument is TResult.
             //{
             //    Console.WriteLine($"{item}");
             //}
-        #endregion
+            #endregion
 
-        #endregion
+            #endregion
 
-    }
+            #region ToArray
+            //method forces immediate query evaluation and returns an array that contains the query results.
+            //var res=cars.ToArray();
+            //Console.WriteLine(res[0]);
+            //Console.WriteLine(cars.ElementAt(0)); // Same output
+            //Console.WriteLine(cars[0]);//Cannot apply indexing with [] to an expression of type 'IEnumerable<Car>'
+
+            #endregion
+
+        }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
         //{
