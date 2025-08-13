@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.ComponentModel;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
@@ -1264,17 +1266,17 @@ An empty IEnumerable<T> whose type argument is TResult.
              Produces the set union of two sequences according to a specified 
              key selector function.
              */
-//            var list1 = new List<Person>
-//{
-//    new Person { Name = "Mohamed", Age = 1500 },
-//    new Person { Name = "Ali", Age = 20 }
-//};
+            //            var list1 = new List<Person>
+            //{
+            //    new Person { Name = "Mohamed", Age = 1500 },
+            //    new Person { Name = "Ali", Age = 20 }
+            //};
 
-//            var list2 = new List<Person>
-//{
-//    new Person { Name = "mohamed", Age = 25 },
-//    new Person { Name = "Mona", Age = 50 }
-//};
+            //            var list2 = new List<Person>
+            //{
+            //    new Person { Name = "mohamed", Age = 25 },
+            //    new Person { Name = "Mona", Age = 50 }
+            //};
             //var res = list1.UnionBy(list2, p => p.Name);
             //foreach (var person in res)
             //{
@@ -1291,7 +1293,45 @@ An empty IEnumerable<T> whose type argument is TResult.
 
             #endregion
 
-        }
+            #region Zip
+
+            #region FirstOverLoad
+            /*Zip<TFirst,TSecond>(IEnumerable<TFirst>, IEnumerable<TSecond>)	
+          Produces a sequence of tuples with elements from the two specified sequences.*/
+            int[] arr01 = [1, 2, 3, 4];
+            string[] arr02 = ["One", "Two", "Thress","Four"];
+            //var res=arr01.Zip(arr02);
+            //foreach( var item in res)
+            //{
+            //    Console.WriteLine($"{item.First} - {item.Second}");
+            //}
+            #endregion
+
+            #region SecondOverLoad
+            /*Zip<TFirst,TSecond,TThird>(IEnumerable<TFirst>, IEnumerable<TSecond>, IEnumerable<TThird>)	
+           Produces a sequence of tuples with elements from the three specified sequences.*/
+            //DateTime[] arr03 = { DateTime.Now.AddDays(1), DateTime.Now.AddDays(2), DateTime.Now.AddDays(3) };
+            //var res=arr01.Zip(arr02,arr03);
+            //foreach(var (first,second,three)in res)
+            //{
+            //    Console.WriteLine($"{first} - {second} - {three}");
+            //}
+            #endregion
+
+            #region ThreeOverload
+            /*Zip<TFirst,TSecond,TResult>(IEnumerable<TFirst>, IEnumerable<TSecond>, Func<TFirst,TSecond,TResult>)	
+  Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results.*/
+            //var res=arr01.Zip(arr02,(number,word)=>new {Number=number,Word=word});
+            //var res=arr01.Zip(arr02,(number,word)=>$"{number} -- {word}");
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+        #endregion
+
+        #endregion
+
+    }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
         //{
