@@ -1340,6 +1340,19 @@ An empty IEnumerable<T> whose type argument is TResult.
 
             #endregion
 
+            #region ToDictionary
+            /*ToDictionary<TSource,TKey,TElement>(IEnumerable<TSource>, Func<TSource,TKey>, Func<TSource,TElement>, IEqualityComparer<TKey>)	
+            Creates a Dictionary<TKey,TValue> from an IEnumerable<T> according to a 
+            specified key selector function, a comparer,
+            and an element selector function.*/
+            //var res = cars.ToDictionary(c => c.Id, c => new { c.Make, c.VIN });
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Key);
+            //    Console.WriteLine($"\t\t{item.Value}");
+            //}
+            #endregion
+
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
