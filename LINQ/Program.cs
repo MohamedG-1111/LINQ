@@ -1356,11 +1356,25 @@ An empty IEnumerable<T> whose type argument is TResult.
             #region Hashset
             /*HashSet<TSource>
 A HashSet<T> that contains values of type TSource selected from the input sequence.*/
-            var res = cars.ToHashSet();
-            foreach(var item in res)
-            {
-                Console.WriteLine(item);
-            }
+            //var res = cars.ToHashSet();
+            //foreach(var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Tolist
+            /*List<TSource>
+A List<T> that contains elements from the input sequence.*/
+            //var res=cars.Where(c=>c.MaxSpeed > 500).ToList();
+            //Console.WriteLine(res.Count());
+            //foreach(var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            // Tolist,ToDictionary,ToArray == > Immediate Excution
             #endregion
         }
 
