@@ -1388,6 +1388,7 @@ A List<T> that contains elements from the input sequence.*/
             var Departments = ReJoin.LoadDepartments();
             var Projects = ReJoin.LoadProjects();
             var EmpProject = ReJoin.LoadEmployeeProjects();
+            var taskItems = ReJoin.LoadTasks();
 
             #region Q1
             /*
@@ -1588,12 +1589,283 @@ A List<T> that contains elements from the input sequence.*/
 
 
 
-            foreach (var item in q5)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine();
-            
+            //foreach (var item in q2)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+
+            #endregion
+
+            #region GroupJoin
+
+            #region ex01
+            //var result = from dept in Departments
+            //             join emp in Worker
+            //             on dept.Id equals emp.DepartmentId
+            //             into empGroup
+            //             where empGroup.Any()
+            //             select new
+            //             {
+            //                 DepartmentName = dept.Name,
+            //                 Employees = empGroup
+            //             };
+            //var result1 = from emp in Worker
+            //join dept in Departments
+            //on  emp.DepartmentId equals dept.Id 
+            //into deptGroup
+            //where deptGroup.Any()
+            //             select new
+            //             {
+            //                 EmployeName=emp.Name,
+            //                 departments = deptGroup
+            //             };
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.DepartmentName}");
+            //    Console.WriteLine($"\t{string.Join(',', item.Employees.Select(e => new { e.Id, e.Name }))}");
+            //}
+            //Console.WriteLine();
+            //foreach (var item in result1)
+            //{
+            //    Console.WriteLine($"{item.EmployeName}");
+            //    Console.WriteLine($"\t{string.Join(',', item.departments.Select(e => new { e.Id, e.Name }))}");
+            //}
+            #endregion
+
+            #region ex02
+            //var res = from dept in Departments
+            //          join emp in Worker
+            //          on dept.Id equals emp.DepartmentId
+            //          select new
+            //          {
+            //              DepartmentName = dept.Name,
+            //              EmployeeName = emp.Name,
+            //              EmployeeProjects = String.Join(", ",
+            //                                  (from ep in EmpProject
+            //                                   where ep.EmployeeId == emp.Id
+            //                                   join p in Projects
+            //                                   on ep.ProjectId equals p.Id
+            //                                   select p.Name))
+            //          };
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"{item.DepartmentName} - {item.EmployeeName} - {item.EmployeeProjects}");
+            //}
+
+
+            #endregion
+
+            #region ex03
+            /*
+You have the EmployeeProject table where each record contains EmployeeId and ProjectId.
+Task:
+
+Group projects by EmployeeId
+
+Count the number of projects for each employee
+
+Display the employee name and the number of projects they are assigned to*/
+            //var res = from emp in Worker
+            //          join pro in EmpProject
+            //          on emp.Id equals pro.EmployeeId
+            //          into EmpProjects
+            //          select new
+            //          {
+            //              EmployeeName = emp.Name,
+            //              ///ProjectCount = EmpProjects.Count()
+            //              ProjectCount = EmpProjects.CountBy(e => e.EmployeeId).First().Value
+            //          };
+            //var res01 = Worker.GroupJoin(EmpProject,
+            //    emp => emp.Id,
+            //    empPro => empPro.EmployeeId,
+            //    (emp, empPro) => new
+            //    {
+            //        EmployeeName = emp.Name,
+            //        ProjectCount = empPro.Count()
+
+            //    });
+            //foreach (var emp in res01)
+            //{
+            //    Console.WriteLine($"{emp.EmployeeName} - {emp.ProjectCount}");
+            //}
+            #endregion
+
+            #region ex04
+            /*
+Question using Group Join + Into
+You have Departments and Workers tables.
+Task:
+Use a Group Join to link each department with its employees
+Display the department name along with the list of employees in it
+Exclude departments that have no employees*/
+            //var res = from dept in Departments
+            //          join emp in Worker
+            //          on dept.Id equals emp.DepartmentId
+            //          into DeptEmployee
+            //          where DeptEmployee.Any()
+            //          select new
+            //          {
+            //              DepartmentName=dept.Name,
+            //              EmployeeList=DeptEmployee
+            //          };
+            //var res01 = Departments.GroupJoin(Worker,
+            //    dept => dept.Id,
+            //    emp => emp.DepartmentId,
+            //    (dept, emp) => new
+            //    {
+            //        DepartmentName = dept.Name,
+            //        EmployeeList = emp,
+
+            //    }).Where(e => e.EmployeeList.Any());
+            //foreach (var item in res01)
+            //{
+            //    Console.WriteLine($"Department Name : {item.DepartmentName}");
+            //    foreach (var item2 in item.EmployeeList)
+            //    {
+            //        Console.WriteLine($"\t\t\t{item2.Name}");
+            //    }
+            //}
+
+            #endregion
+
+            #region ex05
+            /*Question using Method Syntax
+
+You have EmployeeProject and Projects tables.
+Task:
+
+Use Method Syntax to group projects by Project.Name
+
+Count the number of employees assigned to each project
+
+Display the project name and the number of employees for each project*/
+            //var res = from p in Projects
+            //          join empPro in EmpProject
+            //          on p.Id equals empPro.ProjectId
+            //          into empProjects
+            //          where empProjects.Any()
+            //          select new
+            //          {
+            //              ProjectName = p.Name,
+            //              CountOfEmployee = empProjects.Select(e=>e.EmployeeId).Distinct().Count(),
+            //          };
+            //var res = Projects.GroupJoin(EmpProject,
+            //    p => p.Id,
+            //    emp => emp.ProjectId,
+            //    (p, emp) => new
+            //    {
+            //        ProjectName=p.Name,
+            //        CountOfEmployee=emp.Select(e=>e.EmployeeId).Count()
+            //    }).Where(emp=> emp.CountOfEmployee != 0);
+            //var res = Projects.Join(EmpProject,
+            //    pro => pro.Id,
+            //    empPro => empPro.ProjectId,
+            //    (pro, empPro) => new
+            //    {
+            //        pro.Name,
+            //        empPro.EmployeeId
+            //    }).GroupBy(pro => pro.Name, (key,res) =>new
+            //    {
+            //        ProjectName = key,
+            //        CountOfEmployee = res.Select(x => x.EmployeeId).Distinct().Count()
+            //    });
+
+            //foreach( var emp in res)
+            //{
+            //    Console.WriteLine($"{emp.ProjectName} - {emp.CountOfEmployee}");
+            //}
+
+
+            #endregion
+
+            #region ex06
+            /*,
+make a LINQ query that shows for each employee:
+
+The department name
+
+The employee name
+
+The project name
+
+How many tasks they have in that project
+
+The names of these task*/
+            //var res = from emp in Worker
+            //          join dept in Departments
+            //          on emp.DepartmentId equals dept.Id
+            //          join empPro in EmpProject
+            //          on emp.Id equals empPro.EmployeeId
+            //          join project in Projects
+            //          on empPro.ProjectId equals project.Id
+            //          join task in taskItems
+            //          on new { empPro.ProjectId, empPro.EmployeeId }
+            //          equals new { task.ProjectId, task.EmployeeId }
+            //          into EmpTasks
+            //          select new
+            //          {
+            //              DepartmentName=dept.Name,
+            //              EmployeeName=emp.Name,
+            //              ProjectName=project.Name,
+            //              CountOfTask= EmpTasks.Count(),
+            //              NameOfTasks=String.Join(',', EmpTasks.Select(t => t.Name)),
+            //          };
+            //var res = Worker
+            // .Join(Departments,
+            //     emp => emp.DepartmentId,
+            //     dept => dept.Id,
+            //     (emp, dept) => new
+            //     {
+            //         emp.Id,
+            //         emp.Name,
+            //         DepartmentName = dept.Name
+            //     })
+            // .Join(EmpProject,
+            //     emp => emp.Id,
+            //     empPro => empPro.EmployeeId,
+            //     (emp, empPro) => new
+            //     {
+            //         emp.DepartmentName,
+            //         emp.Name,
+            //         empPro.ProjectId,
+            //         EmployeeId = emp.Id
+            //     })
+            // .Join(Projects,
+            //     empPro => empPro.ProjectId,
+            //     project => project.Id,
+            //     (empPro, project) => new
+            //     {
+            //         empPro.DepartmentName,
+            //         empPro.Name,
+            //         ProjectName = project.Name,
+            //         empPro.ProjectId,
+            //         empPro.EmployeeId
+            //     })
+            // .GroupJoin(taskItems,
+            //     empPro => new { empPro.ProjectId, empPro.EmployeeId },
+            //     task => new { task.ProjectId, task.EmployeeId },
+            //     (empPro, EmpTasks) => new
+            //     {
+            //         empPro.DepartmentName,
+            //         EmployeeName = empPro.Name,
+            //         empPro.ProjectName,
+            //         CountOfTask = EmpTasks.Count(),
+            //         NameOfTasks = string.Join(",", EmpTasks.Select(t => t.Name))
+            //     });
+
+
+            //Console.WriteLine($"{"Department",-15} {"Employee",-15} {"Project",-20} {"#Tasks",-8} {"Tasks"}");
+            //Console.WriteLine(new string('-', 80));
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"{item.DepartmentName,-15} {item.EmployeeName,-15} {item.ProjectName,-20} {item.CountOfTask,-8} {item.NameOfTasks}");
+            //}
+            #endregion
+
+
             #endregion
         }
 

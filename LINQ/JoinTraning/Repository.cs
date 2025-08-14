@@ -28,7 +28,8 @@ namespace LINQ.JoinTraning
     {
         new Project { Id = 101, Name = "Website" },
         new Project { Id = 102, Name = "Mobile App" },
-        new Project { Id = 103, Name = "Database Upgrade" }
+        new Project { Id = 103, Name = "Database Upgrade" },
+        new Project { Id = 104, Name = "Ai Model" }
     };
 
         public static List<EmployeeProject> LoadEmployeeProjects() => new()
@@ -39,7 +40,15 @@ namespace LINQ.JoinTraning
         new EmployeeProject { EmployeeId = 3, ProjectId = 101 },
         new EmployeeProject { EmployeeId = 4, ProjectId = 102 },
         new EmployeeProject { EmployeeId = 4, ProjectId = 103 },
-        new EmployeeProject { EmployeeId = 4, ProjectId = 103 }
+        new EmployeeProject { EmployeeId = 4, ProjectId = 104 }
     };
+        public static List<TaskItem> LoadTasks() => new()
+{
+    new TaskItem { Id = 1, Name = "Design UI", ProjectId = 101, EmployeeId = 1 },
+    new TaskItem { Id = 2, Name = "Backend API", ProjectId = 101, EmployeeId = 3 },
+    new TaskItem { Id = 3, Name = "Testing", ProjectId = 102, EmployeeId = 2 },
+    new TaskItem { Id = 4, Name = "Data Migration", ProjectId = 103, EmployeeId = 4 },
+    new TaskItem { Id = 5, Name = "AI Training", ProjectId = 104, EmployeeId = 4 }
+};
     }
 }
