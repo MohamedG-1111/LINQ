@@ -2010,6 +2010,40 @@ Produces the set intersection of two sequences by
 
 
             #endregion
+
+            #region SequenceEqual
+            /*
+              SequenceEqual<TSource>(IEnumerable<TSource>, IEnumerable<TSource>)	
+              Determines whether two sequences are equal by comparing the elements by
+              using the default equality comparer for their type.
+            */
+            //int[] r1 = { 1, 2, 3, 4, 5 };
+            //int[] r2 = { 1, 2, 3, 4, 5 };
+            //int[] r3 = { 1, 2, 3, 5, 4 };
+            //Console.WriteLine(r1.SequenceEqual(r2));// true
+            //Console.WriteLine(r1.SequenceEqual(r3));// false
+                                                    // -----------------------------------------------------
+            /*
+             SequenceEqual<TSource>(IEnumerable<TSource>, IEnumerable<TSource>, 
+             IEqualityComparer<TSource>)	
+             Determines whether two sequences are equal by comparing their elements
+             by using a specified IEqualityComparer<T>.
+             */
+            //pet pet1 = new pet { Name = "Turbo", Age = 2 };
+            //pet pet3 = new pet { Name = "Peanut", Age = 8 };
+            //pet pet2 = new pet { Name = "Turbo", Age = 2 };
+            //pet pet4 = new pet { Name = "Peanut", Age = 8 };
+
+            // Create two lists of pets.
+            //List<pet> pets1 = new List<pet> { pet1, pet3 };
+            //List<pet> pets2 = new List<pet> { pet2, pet4 };
+
+            //bool equal = pets1.SequenceEqual(pets2);// false
+            //Console.WriteLine(equal);
+            //bool equal = pets1.SequenceEqual(pets2,new PetIequaltableComparer());// True
+            //Console.WriteLine(equal);
+
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
