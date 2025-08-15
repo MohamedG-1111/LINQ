@@ -2111,6 +2111,16 @@ Produces the set intersection of two sequences by
             //    Console.WriteLine(i);
             //}
             #endregion
+
+            #region Repeat
+            /*Generates a sequence that contains one repeated value.*/
+            //var res = Enumerable.Repeat(2, 10);
+            //var res = Enumerable.Repeat(new Person(1,"Mohamed"), 10);
+            //foreach (var i in res)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
