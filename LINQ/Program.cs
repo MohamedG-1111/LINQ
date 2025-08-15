@@ -2102,6 +2102,15 @@ Produces the set intersection of two sequences by
 
 
             #endregion
+
+            #region Range
+            /*Generates a sequence of integral numbers within a specified range.*/
+            //var res = Enumerable.Range(2/*start*/, 10/*count of squence*/);
+            //foreach(var i in res)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
