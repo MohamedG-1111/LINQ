@@ -2130,6 +2130,13 @@ Produces the set intersection of two sequences by
             //var res=cars.Reverse();
             //Repository.PrintCars(res);
             #endregion
+
+            #region OrderRandom
+            //var res = cars.OrderBy(c => Guid.NewGuid()).Take(50).Distinct();
+            //Repository.PrintCars(res);
+
+            //Shuffle() in .Net10
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
