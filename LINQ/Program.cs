@@ -1867,6 +1867,56 @@ The names of these task*/
 
 
             #endregion
+
+
+            #region LeftJoin
+            //var res = from emp in Worker
+            //          join dept in Departments
+            //          on emp.DepartmentId equals  dept.Id
+            //          select new
+            //          {
+            //              EmployeeName=emp.Name,
+            //              DepartmentName = dept.Name,
+            //          };  // Inner Join
+
+            // Using Query
+            //var res = from emp in Worker
+            //          join dept in Departments
+            //          on emp.DepartmentId equals dept.Id
+            //          into EmployeeDept
+            //          from DEPT in EmployeeDept.DefaultIfEmpty()
+            //          select new
+            //          {
+            //              EmployeeName = emp.Name,
+            //              DepartmentName = DEPT?.Name ?? "No Department", // If DEPT is Null return "No Department"
+            //          };
+
+            // Using Method Before C .Net10
+
+            //var res = Worker.GroupJoin(Departments,
+            //    emp => emp.DepartmentId,
+            //    dept => dept.Id,
+            //    (emp, dept) => new
+            //    {
+            //        EmployeeName = emp.Name,
+            //        DepartmentName = dept
+            //    }).SelectMany(x => x.DepartmentName.DefaultIfEmpty(), (x, dept) => new
+            //    {
+            //        x.EmployeeName,
+            //        DepartmentName = dept?.Name,
+            //    });
+
+            // Using Method After C .Net10
+          
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
+            //}
+
+            #endregion 
+
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)

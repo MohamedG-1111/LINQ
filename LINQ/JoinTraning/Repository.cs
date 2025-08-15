@@ -13,7 +13,8 @@ namespace LINQ.JoinTraning
         new Worker { Id = 1, Name = "Ahmed", DepartmentId = 1 },
         new Worker { Id = 2, Name = "Sara", DepartmentId = 2 },
         new Worker { Id = 3, Name = "Omar", DepartmentId = 1 },
-        new Worker { Id = 4, Name = "Laila", DepartmentId = 3 }
+        new Worker { Id = 4, Name = "Laila", DepartmentId = 3 },
+        new Worker { Id = 5, Name = "Ali", }
     };
 
         public static List<Department> LoadDepartments() => new()
