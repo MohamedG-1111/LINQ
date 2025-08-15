@@ -2121,6 +2121,15 @@ Produces the set intersection of two sequences by
             //    Console.WriteLine(i);
             //}
             #endregion
+
+            #region Reverse
+            //int[] r = [1, 2, 3, 4, 5, 6];
+            ////var res = r.Reverse();
+            //foreach(int i in r)
+            //    Console.WriteLine(i);
+            //var res=cars.Reverse();
+            //Repository.PrintCars(res);
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)
