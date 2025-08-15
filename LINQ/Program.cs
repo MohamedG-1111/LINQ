@@ -2059,7 +2059,7 @@ Produces the set intersection of two sequences by
             //                new pet { Name = "Turbo", Age = 2 },
             //                new pet { Name = "Peanut", Age = 8 }
             //            };
-                        
+
             // var pets2 = new[]
             //            {
             //                new pet { Name = "Turbo", Age = 2 },
@@ -2072,6 +2072,33 @@ Produces the set intersection of two sequences by
             //var res = pets1.ExceptBy(pets2.Select(p=>new { p.Name,p.Age}),p=> new { p.Name, p.Age });
             //foreach (var pet in res)
             //    Console.WriteLine(pet);
+
+
+            #endregion
+
+            #region OfType
+            /*Filters the elements of an IEnumerable based on a specified type.*/
+            //ArrayList fruits = new()
+            //                          {
+            //                              "Mango",
+            //                              "Orange",
+            //                              null,
+            //                              "Apple",
+            //                              3.0,
+            //                              "Banana",
+            //                              new pet(){Name="mohamed",Age=12},
+            //                              new Person(1,"Mohamed")
+            //                          };
+            //var res = from object item in fruits
+            //          where item is string
+            //          select (string)item;
+
+            //var res01 = fruits.OfType<Person>();
+            //var res02 = fruits.OfType<string>();
+            //var res03 = fruits.OfType<pet>();
+
+            // foreach(var item in res03)
+            //    Console.WriteLine(item);
 
 
             #endregion
