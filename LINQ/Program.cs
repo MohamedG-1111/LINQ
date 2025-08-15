@@ -149,16 +149,16 @@ default value if the sequence contains no elements.
              if the sequence contains no elements.
              */
             //cars = [];
-            var DefaultCar = new Car()
-            {
-                Id = 0,
-                Make = "Unknown",
-                Model = "Unknown",
-                ManufactorYear = 0,
-                VIN = "N/A",
-                Color = "Unspecified",
-                MaxSpeed = 0,
-            };
+            //var DefaultCar = new Car()
+            //{
+            //    Id = 0,
+            //    Make = "Unknown",
+            //    Model = "Unknown",
+            //    ManufactorYear = 0,
+            //    VIN = "N/A",
+            //    Color = "Unspecified",
+            //    MaxSpeed = 0,
+            //};
             //var result = cars.FirstOrDefault(DefaultCar);
             //Console.WriteLine(result); // Do not Return Any Thing
             #endregion
@@ -1949,7 +1949,67 @@ The names of these task*/
             //Repository.PrintCars(res);
             #endregion
 
+            #region Intersect
+            /* IEnumerable<TSource>)	
+Produces the set intersection of two sequences by 
+            using the default equality comparer to compare values.*/
 
+
+
+            //int[] arr09 = [1, 3, 4, 5, 60,5,3,2,4,52];
+            //int[] arr08 = [5,3,2,6,9,32,545,21];
+            //var res=arr09.Intersect(arr08);
+            //foreach(var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            List<Car> cars1 = new()
+{
+    new Car(1, "Ford", "GT", 2005, "WAU3FAFR0BA781507", "Mauv", 298),
+    new Car(2, "Mercury", "Mystique", 2000, "1FTEW1C89AK439924", "Turquoise", 224),
+    new Car(3, "Volvo", "S40", 2001, "JTHBH1GGXF2728528", "Red", 214),
+    new Car(4, "Nissan", "Maxima", 2010, "TRU2D38J191265484", "Fuscia", 182),
+    new Car(5, "Ford", "Bravada", 1994, "WAUDH48H19K669503", "Yellow", 240),
+    new Car(6, "Mercury", "Mariner", 2005, "5N1AA0NE4N089552", "Puce", 222)
+};
+
+            List<Car> cars2 = new()
+{ 
+         new Car(6, "Mercury", "Mariner", 2005, "5N1AA0NE4N089552", "Puce", 222),
+    new Car(7, "Geo", "Tracker", 1995, "3GYFK66N15G436658", "Puce", 259),
+    new Car(90, "Ford", "Tracker", 1995, "3GYFK66N15G436658", "Puce", 259),
+    new Car(8, "Mitsubishi", "GTO", 1991, "1VWAP7A39EC013320", "Aquamarine", 230),
+         new Car(3, "Ford", "S40", 2001, "JTHBH1GGXF2728528", "Orange", 214)
+};
+            //var res=cars1.Intersect(cars2);
+            //    Repository.PrintCars(res);
+            // Use IEqualityComparer
+            //var res = cars1.Intersect(cars2, new carIEqualityComparer());
+            //Repository.PrintCars(res);
+
+            //var res = cars1.Intersect(cars2, new carMakeIEqualityComparer());
+            //Repository.PrintCars(res);
+            //// ==
+            //Console.WriteLine();
+            //var res01 = cars1.IntersectBy(cars2.Select(c=>c.Make), c=>c.Make);
+            //Repository.PrintCars(res01);
+
+            #region IntersectBy
+            /*
+             * IntersectBy<TSource,TKey>(IEnumerable<TSource>, IEnumerable<TKey>, Func<TSource,TKey>)	
+    Produces the set intersection of two sequences according to a 
+            specified key selector function.*/
+            //var res = cars1.IntersectBy(cars2.Select(c => c.Make), c => c.Make/*from car1*/);
+            //var res = cars1.IntersectBy(cars2.Select(c => new { c.Id,c.Make}), c => new{ c.Id,c.Make});
+            //Repository.PrintCars(res);
+
+            #endregion
+
+
+
+
+
+            #endregion
         }
 
         //private static IEnumerable<Car> Enumerable(List<Car> cars, Func<Car, bool> predicate)

@@ -19,17 +19,25 @@ namespace LINQ
         public int MaxSpeed { get; set; }
 
         // Default Constructor
+        //public Car(int id, string make, string model, int manufactorYear, string vIN, string color, int maxSpeed)
+        //{
+        //    Id = 0;
+        //    Make = "Unknown";
+        //    Model = "Unknown";
+        //    ManufactorYear = 0;
+        //    VIN = "N/A";
+        //    Color = "Unspecified";
+        //    MaxSpeed = 0;
+        //    Id = id;
+        //    Make = make;
+        //    Model = model;
+        //    ManufactorYear = manufactorYear;
+        //    VIN = vIN;
+        //    Color = color;
+        //    MaxSpeed = maxSpeed;
+        //}
         public Car()
-        {
-            Id = 0;
-            Make = "Unknown";
-            Model = "Unknown";
-            ManufactorYear = 0;
-            VIN = "N/A";
-            Color = "Unspecified";
-            MaxSpeed = 0;
-        }
-
+        { }
         public Car(int id, string make, string model, int manufactorYear, string vIN, string color, int maxSpeed)
         {
             Id = id;
@@ -49,13 +57,22 @@ namespace LINQ
 
         public bool Equals(Car? other)
         {
-            if (other is not null)
-            {
-                return Id==other.Id && Make == this.Make && Model == other.Model 
-                    && ManufactorYear==this.ManufactorYear && VIN==other.VIN
-                    && Color==other.Color && MaxSpeed==other.MaxSpeed;
-            }
-            return false;
+            if (other is null) return false;
+            return Id == other.Id
+                && Make == other.Make
+                && Model == other.Model
+                && ManufactorYear == other.ManufactorYear
+                && VIN == other.VIN
+                && Color == other.Color
+                && MaxSpeed == other.MaxSpeed;
         }
+
+        //public override bool Equals(object? obj) => Equals(obj as Car);
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Make, Model, ManufactorYear, VIN, Color, MaxSpeed);
+        }
+
     }
 }
