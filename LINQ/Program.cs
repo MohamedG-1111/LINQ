@@ -2022,7 +2022,7 @@ Produces the set intersection of two sequences by
             //int[] r3 = { 1, 2, 3, 5, 4 };
             //Console.WriteLine(r1.SequenceEqual(r2));// true
             //Console.WriteLine(r1.SequenceEqual(r3));// false
-                                                    // -----------------------------------------------------
+            // -----------------------------------------------------
             /*
              SequenceEqual<TSource>(IEnumerable<TSource>, IEnumerable<TSource>, 
              IEqualityComparer<TSource>)	
@@ -2042,6 +2042,37 @@ Produces the set intersection of two sequences by
             //Console.WriteLine(equal);
             //bool equal = pets1.SequenceEqual(pets2,new PetIequaltableComparer());// True
             //Console.WriteLine(equal);
+
+            #endregion
+
+            #region Except
+            /*Except<TSource>(IEnumerable<TSource>, IEnumerable<TSource>)	
+             Produces the set difference of two sequences by using the default 
+            equality comparer to compare values.*/
+            //int[] r1 = [1, 2, 3, 4, 5, 6, 7];
+            //int[] r2 = [ 5, 6, 7];
+            //var res=r1.Except(r2);  
+            //foreach(int i in res)
+            //    Console.WriteLine(i);
+            //var pets1 = new[]
+            //            {
+            //                new pet { Name = "Turbo", Age = 2 },
+            //                new pet { Name = "Peanut", Age = 8 }
+            //            };
+                        
+            // var pets2 = new[]
+            //            {
+            //                new pet { Name = "Turbo", Age = 2 },
+            //                 new pet { Name = "Peanut", Age = 9 }
+            //            };
+            //var res = pets1.Except(pets2,new PetIequaltableComparer());
+            //foreach(var pet in res)
+            //    Console.WriteLine(pet);
+            // Using ExecptBy
+            //var res = pets1.ExceptBy(pets2.Select(p=>new { p.Name,p.Age}),p=> new { p.Name, p.Age });
+            //foreach (var pet in res)
+            //    Console.WriteLine(pet);
+
 
             #endregion
         }
