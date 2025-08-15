@@ -12,6 +12,7 @@ using ReJoin = LINQ.JoinTraning.Repository;
 using static System.Formats.Asn1.AsnWriter;
 using System.Net;
 using System.Transactions;
+using System.Net.WebSockets;
 
 namespace LINQ
 {
@@ -1907,7 +1908,7 @@ The names of these task*/
             //    });
 
             // Using Method After C .Net10
-          
+
 
 
             //foreach (var item in res)
@@ -1915,7 +1916,39 @@ The names of these task*/
             //    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
             //}
 
-            #endregion 
+            #endregion
+
+
+            #region Contain
+            /*
+             * Contains<TSource>(IEnumerable<TSource>, TSource)	
+              Determines whether a sequence contains a specified element 
+              by using the default equality comparer.*/
+
+            //int[] arrr = [12, 3, 4, 5, 6, 4, 2];
+            //Console.WriteLine(arrr.Contains(3));
+            //var car = new Car()
+            //{
+            //    Id = 1,
+            //    Make = "Kia",
+            //    Model = "Sportage",
+            //    ManufactorYear = 1996,
+            //    VIN = "WAUEH98E06A527409",
+            //    Color = "Mauv",
+            //    MaxSpeed = 669
+            //};
+            //var IsExist = cars.Contains(car);
+            //Console.WriteLine(IsExist); // False Compare by reference to Compare by value Implement IEquatable or Implement IEquality Comparer
+
+            // After Implement IEquatable
+            //var IsExist = cars.Contains(car);
+            //Console.WriteLine(IsExist);
+
+            //int[] indexs = [1, 5, 9, 800, 45];
+            //var res=cars.Where(c=> indexs.Contains(c.Id));
+            //Repository.PrintCars(res);
+            #endregion
+
 
         }
 

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace LINQ
 {
-    public class Car
+    public class Car:IEquatable<Car>
     {
         public int Id { get; set; }
         public string Make { get; set; }
@@ -45,6 +45,17 @@ namespace LINQ
         public override string ToString()
         {
             return $"ID: {Id}, Make: {Make}, Model: {Model}, Year: {ManufactorYear}, VIN: {VIN}, Color: {Color}, Max Speed: {MaxSpeed} km/h";
+        }
+
+        public bool Equals(Car? other)
+        {
+            if (other is not null)
+            {
+                return Id==other.Id && Make == this.Make && Model == other.Model 
+                    && ManufactorYear==this.ManufactorYear && VIN==other.VIN
+                    && Color==other.Color && MaxSpeed==other.MaxSpeed;
+            }
+            return false;
         }
     }
 }
