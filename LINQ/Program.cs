@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Transactions;
 using LINQ;
+using LINQ.CustomLinqMethod;
 using LINQ.JoinTraning;
 using Newtonsoft.Json.Linq;
 using static System.Formats.Asn1.AsnWriter;
@@ -2235,6 +2236,24 @@ Finally, you compile it into an executable function and run it.*/
 
             #endregion
 
+            #endregion
+
+
+            #region CustomLinqMethod
+            //for(int i = 1; i < 7; i++)
+            //{
+            //    var res = cars.Paginate(i,20);
+            //    res.print();
+            //}
+
+            //var res = cars.PaginateV02(null, 39);
+            //res.print();
+
+            //var res = cars.PaginateWithWhere(c => c.Make == "Ford", 1, 20);
+            //res.print();
+
+            //var res = cars.RandomElement(C => C.Make == "Ford");
+            //Console.WriteLine(res);
             #endregion
         }
 
