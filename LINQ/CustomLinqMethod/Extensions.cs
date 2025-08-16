@@ -54,6 +54,8 @@ namespace LINQ.CustomLinqMethod
             if(predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
             var res = source.Where(predicate);
+            if (!res.Any())
+                return default;
             return res.ElementAt(random.Next(0,res.Count()));
 
         }
