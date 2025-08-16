@@ -9,6 +9,7 @@ namespace LINQ
 {
     internal class Person:IComparable<Person>   
     {
+        public Person() { }
         public Person(int id, string name)
         {
             Id = id;

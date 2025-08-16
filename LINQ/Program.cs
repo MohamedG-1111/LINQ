@@ -2,17 +2,18 @@
 using System.Collections;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Net;
+using System.Net.WebSockets;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
+using System.Transactions;
 using LINQ;
 using LINQ.JoinTraning;
 using Newtonsoft.Json.Linq;
-using ReJoin = LINQ.JoinTraning.Repository;
 using static System.Formats.Asn1.AsnWriter;
-using System.Net;
-using System.Transactions;
-using System.Net.WebSockets;
+using ReJoin = LINQ.JoinTraning.Repository;
 
 namespace LINQ
 {
@@ -2136,6 +2137,104 @@ Produces the set intersection of two sequences by
             //Repository.PrintCars(res);
 
             //Shuffle() in .Net10
+            #endregion
+
+
+            #region Expreession
+
+            #region Expression01
+            /*Expression stores code as a description instead of executing it.
+
+You can inspect or modify this description as needed.
+
+Finally, you compile it into an executable function and run it.*/
+            //Expression<Func<int, bool>> expr = n => n > 5;
+            //Console.WriteLine(expr);
+            //Console.WriteLine(expr.Body.NodeType);
+            //Console.WriteLine(expr.Parameters[0]);
+            //var body = (BinaryExpression)expr.Body;
+            //Console.WriteLine(body.Left);//n
+            //Console.WriteLine(body.Right);//5
+            //Console.WriteLine(" -------------------------- \n");
+            //// -- Convert > to < 
+            //// expr Immutable so Create New Expreesion
+            //BinaryExpression NewBody=Expression.LessThan(body.Left, body.Right);
+            //Console.WriteLine(NewBody);
+            //var newExpr = Expression.Lambda<Func<int, bool>>(NewBody, expr.Parameters); 
+            //Console.WriteLine();
+            //// Excute Expression
+            ////Console.WriteLine(NewExptr(10));// Invaild
+            //var IsBiggerThan5 = newExpr.Compile();
+            //Console.WriteLine(IsBiggerThan5(9));
+            #endregion
+
+            #region Expressions02
+            // x => x.Age > 18 && x.Name.StartsWith("M")
+            //ParameterExpression parm01 = Expression.Parameter(typeof(Person), "x");
+            //ConstantExpression parm02 = Expression.Constant(18, typeof(int));
+            //var age = Expression.Property(parm01, "Age");
+            //var condition = Expression.GreaterThan(age, parm02);
+
+            //var name = Expression.Property(parm01, "name");
+            //var method = typeof(string).GetMethod("StartsWith", new[] { typeof(string) });
+            //var condition02 = Expression.Call(name, method, Expression.Constant("M"));
+
+            //var body = Expression.AndAlso(condition, condition02);
+            //var lambda = Expression.Lambda<Func<Person, bool>>(body, parm01);
+
+            //var compiled = lambda.Compile();
+            //var p1 = new Person { Age = 20, Name = "Mohamed" };
+            //var p2 = new Person { Age = 16, Name = "Mona" };
+            //var p3 = new Person { Age = 25, Name = "Ali" };
+
+            //Console.WriteLine(compiled(p1));
+            //Console.WriteLine(compiled(p2));
+            //Console.WriteLine(compiled(p3));
+
+
+            #endregion
+
+            #region Expressions03
+            /// مجموع الأعمار
+            /// var totalAge = people.Sum(p => p.Age
+            //  var param01 = Expression.Parameter(typeof(Person), "p");
+            //  var age = Expression.Property(param01, "Age");
+            //var Lamda=Expression.Lambda<Func<Person,int>>(age, param01);
+            //  var ls = new List<Person>
+            //  {
+            //     new Person { Age = 20, Name = "Mohamed" },
+            //     new Person { Age = 16, Name = "Mona" },
+            //     new Person { Age = 25, Name = "Ali" },
+            //  };
+            //  Console.WriteLine(Lamda);
+            //  int sum = ls.Sum(Lamda.Compile());
+            //  Console.WriteLine(sum);
+            #endregion
+
+            #region Expression04
+            ///p => p.Name.Length * p.Age
+            //var person = Expression.Parameter(typeof(Person), "p");
+            //var name= Expression.Property(person, "Name");
+            //var Age= Expression.Property(person, "Age");
+            //var length = Expression.Property(name, "Length");
+            //var final=Expression.Multiply(length, Age);
+            //var exprtr = Expression.Lambda<Func<Person, int>>(final, person);
+            //var excute=exprtr.Compile();
+            //var ls = new List<Person>
+            //  {
+            //     new Person { Age = 20, Name = "Mohamed" },
+            //     new Person { Age = 16, Name = "Mona" },
+            //     new Person { Age = 25, Name = "Ali" },
+            //  };
+            //Console.WriteLine(exprtr);
+            //var res=ls.Select(excute);
+            //foreach (var s in res)
+            //{
+            //   Console.WriteLine(s);
+            //}
+
+            #endregion
+
             #endregion
         }
 
